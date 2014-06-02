@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>plugins.http_interface &mdash; Majordom 0.0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/icone.ico"/>
+    <link rel="top" title="Majordom 0.0.9 documentation" href="../index.html" />
+    <link rel="up" title="Plugins API" href="../plugins_api.html" />
+    <link rel="next" title="Arduino Radio custom radio 433MHz modem" href="../arduino.html" />
+    <link rel="prev" title="plugins.base_blocks" href="base_blocks.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../arduino.html" title="Arduino Radio custom radio 433MHz modem"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="base_blocks.html" title="plugins.base_blocks"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../plugins_api.html" accesskey="U">Plugins API</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="plugins-http-interface">
+<h1><a class="reference internal" href="#module-plugins.http_interface" title="plugins.http_interface"><tt class="xref py py-mod docutils literal"><span class="pre">plugins.http_interface</span></tt></a><a class="headerlink" href="#plugins-http-interface" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="../_images/inheritance-fac08572b6cc07e0871a3238f7c31fe773a90dd4.png" alt="Inheritance diagram of plugins.http_interface" usemap="#inheritancefcd7da106f" class="inheritance"/>
+<map id="inheritancefcd7da106f" name="inheritancefcd7da106f">
+<area shape="rect" id="node1" href="../api/generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through a unique ID. The ID is obtained according various processes wich depend on the class of the object. Though, in all cases, they are given so that they are unique." alt="" coords="25,5,216,31"/>
+<area shape="rect" id="node2" href="../api/generic_models.html#generic_models.SettableObject" title="Class used to normalize the access to an object&#39;s settings." alt="" coords="19,79,222,104"/>
+<area shape="rect" id="node3" href="../api/models.html#models.Interface" title="The class :class:`models.Interface` defines the minimal public " alt="" coords="62,152,179,177"/>
+<area shape="rect" id="node4" href="#plugins.http_interface.HTTPInterface" title="Class implementing the Interface interface to make Majordom accessible through HTTP." alt="" coords="5,225,236,251"/>
+</map>
+</p>
+<div class="section" id="module-plugins.http_interface">
+<span id="api"></span><h2>API<a class="headerlink" href="#module-plugins.http_interface" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="plugins.http_interface.HTTPInterface">
+<em class="property">class </em><tt class="descclassname">plugins.http_interface.</tt><tt class="descname">HTTPInterface</tt><big>(</big><em>kernel</em><big>)</big><a class="headerlink" href="#plugins.http_interface.HTTPInterface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/models.html#models.Interface" title="models.Interface"><tt class="xref py py-class docutils literal"><span class="pre">models.Interface</span></tt></a></p>
+<p>Class implementing the Interface interface to make Majordom accessible through HTTP.</p>
+<dl class="method">
+<dt id="plugins.http_interface.HTTPInterface.run">
+<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#plugins.http_interface.HTTPInterface.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the Bottle server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.http_interface.HTTPInterface.handle_request">
+<tt class="descname">handle_request</tt><big>(</big><big>)</big><a class="headerlink" href="#plugins.http_interface.HTTPInterface.handle_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives and processes the request received by the server.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="plugins.http_interface.interface_class">
+<tt class="descclassname">plugins.http_interface.</tt><tt class="descname">interface_class</tt><a class="headerlink" href="#plugins.http_interface.interface_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#plugins.http_interface.HTTPInterface" title="plugins.http_interface.HTTPInterface"><tt class="xref py py-class docutils literal"><span class="pre">HTTPInterface</span></tt></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="http-api-description">
+<h2>HTTP API description<a class="headerlink" href="#http-api-description" title="Permalink to this headline">¶</a></h2>
+<p>This plugin sends and receives json messages, that are directly translated into Python dictionaries.
+An incoming (for the server) message always has a &#8216;command&#8217; key in its dictionaries. This HTTP interface handles the following commands :</p>
+<ul class="simple">
+<li>get_list_ids</li>
+<li>get_settings</li>
+<li>set</li>
+<li>get_infos</li>
+<li>get_actions</li>
+<li>get_block_models</li>
+<li>add_scenario</li>
+<li>get_device_models</li>
+<li>start_adding_process</li>
+<li>get_device_settings</li>
+<li>get_auto_add_instructions</li>
+<li>set_device</li>
+<li>get_sync_instructions</li>
+<li>send_sync_signal</li>
+<li>check_if_device_detected</li>
+<li>get_devices</li>
+<li>update_devices</li>
+<li>device_action</li>
+<li>add_action</li>
+<li>get_scenario</li>
+<li>add_block</li>
+<li>add_info</li>
+<li>add_link</li>
+<li>update_block_positions</li>
+<li>set_block</li>
+<li>remove_block</li>
+<li>remove_link</li>
+<li>toggle_scenario</li>
+</ul>
+<p>Then, the structure of the rest of the json message depends on the command: it can be seen as a function (the command) that has to be called with specific arguments (the rest of the json message). The structure of the json message and the purpose of each command will be described here in the future. For the moment, refer to the HTTP Interface Python code.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">plugins.http_interface</span></tt></a><ul>
+<li><a class="reference internal" href="#module-plugins.http_interface">API</a></li>
+<li><a class="reference internal" href="#http-api-description">HTTP API description</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="base_blocks.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">plugins.base_blocks</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../arduino.html"
+                        title="next chapter">Arduino Radio custom radio 433MHz modem</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/plugins/http_interface.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../arduino.html" title="Arduino Radio custom radio 433MHz modem"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="base_blocks.html" title="plugins.base_blocks"
+             >previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../plugins_api.html" >Plugins API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Victor Creste, Raphaël Gautier and Valérian Justine.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

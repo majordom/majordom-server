@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>plugins.nexa &mdash; Majordom 0.0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/icone.ico"/>
+    <link rel="top" title="Majordom 0.0.9 documentation" href="../index.html" />
+    <link rel="up" title="Plugins API" href="../plugins_api.html" />
+    <link rel="next" title="plugins.oregon" href="oregon.html" />
+    <link rel="prev" title="plugins.arduino_radio" href="arduino_radio.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="oregon.html" title="plugins.oregon"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="arduino_radio.html" title="plugins.arduino_radio"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../plugins_api.html" accesskey="U">Plugins API</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="plugins-nexa">
+<h1><a class="reference internal" href="#module-plugins.nexa" title="plugins.nexa"><tt class="xref py py-mod docutils literal"><span class="pre">plugins.nexa</span></tt></a><a class="headerlink" href="#plugins-nexa" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="../_images/inheritance-063add3fb8a172c8c4c40495971999c859ae19bc.png" alt="Inheritance diagram of plugins.nexa" usemap="#inheritance7a7dbf4143" class="inheritance"/>
+<map id="inheritance7a7dbf4143" name="inheritance7a7dbf4143">
+<area shape="rect" id="node1" href="../api/generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through" alt="" coords="351,2,414,10"/>
+<area shape="rect" id="node2" href="../api/generic_models.html#generic_models.SettableObject" title="generic_models.SettableObject" alt="" coords="270,26,336,34"/>
+<area shape="rect" id="node3" href="../api/models.html#models.Device" title="Base class for any Device." alt="" coords="200,50,236,59"/>
+<area shape="rect" id="node5" href="../api/models.html#models.Protocol" title="In the model used to design the box, a class deriving from " alt="" coords="284,50,322,59"/>
+<area shape="rect" id="node13" href="#plugins.nexa.NexaDevice" title="This is the class used to implement any Nexa&#45;controlled device." alt="" coords="239,74,294,83"/>
+<area shape="rect" id="node6" href="#plugins.nexa.Nexa" title="Main class of the Nexa protocol plugin." alt="" coords="302,74,345,83"/>
+</map>
+</p>
+<div class="section" id="module-plugins.nexa">
+<span id="api"></span><h2>API<a class="headerlink" href="#module-plugins.nexa" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="plugins.nexa.Nexa">
+<em class="property">class </em><tt class="descclassname">plugins.nexa.</tt><tt class="descname">Nexa</tt><big>(</big><em>kernel</em><big>)</big><a class="headerlink" href="#plugins.nexa.Nexa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/models.html#models.Protocol" title="models.Protocol"><tt class="xref py py-class docutils literal"><span class="pre">models.Protocol</span></tt></a></p>
+<p>Main class of the Nexa protocol plugin.</p>
+<dl class="method">
+<dt id="plugins.nexa.Nexa.process_message">
+<tt class="descname">process_message</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#plugins.nexa.Nexa.process_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes a radio message received by the radio modem 
+into a message understable by the protocol.
+The implementation of the message processing is , for the
+moment, a hard-coded finite-state machine.</p>
+<p>TODO: translate into english
+Reçoit une trame identifiee comme destinee à ce driver et
+transmise par la couche inferieure. Cela suppose que la couche la
+plus basse a la capacite d&#8217;identifier le protocole du message et
+s&#8217;adresse ainsi directement à la methode decode_sequence du
+driver.
+La methode doit être specialisee pour traiter et decoder une trame Nexa
+Elle sera totalement redigee quand on saura sous quelle forme le message est obtenu</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.nexa.Nexa.send_command">
+<tt class="descname">send_command</tt><big>(</big><em>device</em>, <em>command</em><big>)</big><a class="headerlink" href="#plugins.nexa.Nexa.send_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method called when a device intends to send a message.
+It builds up the Nexa message according to the command 
+to be sent and the identity of the sending device.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plugins.nexa.NexaDevice">
+<em class="property">class </em><tt class="descclassname">plugins.nexa.</tt><tt class="descname">NexaDevice</tt><big>(</big><em>protocol</em>, <em>settings</em><big>)</big><a class="headerlink" href="#plugins.nexa.NexaDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/models.html#models.Device" title="models.Device"><tt class="xref py py-class docutils literal"><span class="pre">models.Device</span></tt></a></p>
+<p>This is the class used to implement any Nexa-controlled device.</p>
+<dl class="method">
+<dt id="plugins.nexa.NexaDevice.switch_on">
+<tt class="descname">switch_on</tt><big>(</big><em>args</em><big>)</big><a class="headerlink" href="#plugins.nexa.NexaDevice.switch_on" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(Internal)</em> Method called when the &#8220;on&#8221; action is triggered. 
+On the one side, it sends the radio command accordingly.
+On the other side, it updates the Information which 
+reflects the state of the device.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.nexa.NexaDevice.switch_off">
+<tt class="descname">switch_off</tt><big>(</big><em>args</em><big>)</big><a class="headerlink" href="#plugins.nexa.NexaDevice.switch_off" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(Internal)</em> Method called when the &#8220;off&#8221; action is triggered. 
+On the one side, it sends the radio command accordingly.
+On the other side, it updates the Information which 
+reflects the state of the device.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.nexa.NexaDevice.sync">
+<tt class="descname">sync</tt><big>(</big><em>args</em><big>)</big><a class="headerlink" href="#plugins.nexa.NexaDevice.sync" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(Internal)</em> Method called when the &#8220;sync&#8221; action is triggered. 
+It sends a series of &#8220;on&#8221; commands.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.nexa.NexaDevice.unsync">
+<tt class="descname">unsync</tt><big>(</big><em>args</em><big>)</big><a class="headerlink" href="#plugins.nexa.NexaDevice.unsync" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(Internal)</em> Method called when the &#8220;unsync&#8221; action is triggered. 
+It sends a series of &#8220;off&#8221; commands.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="plugins.nexa.protocol_class">
+<tt class="descclassname">plugins.nexa.</tt><tt class="descname">protocol_class</tt><a class="headerlink" href="#plugins.nexa.protocol_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#plugins.nexa.Nexa" title="plugins.nexa.Nexa"><tt class="xref py py-class docutils literal"><span class="pre">Nexa</span></tt></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="plugins.nexa.random">
+<tt class="descclassname">plugins.nexa.</tt><tt class="descname">random</tt><big>(</big><big>)</big> &rarr; x in the interval [0, 1).<a class="headerlink" href="#plugins.nexa.random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">plugins.nexa</span></tt></a><ul>
+<li><a class="reference internal" href="#module-plugins.nexa">API</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="arduino_radio.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">plugins.arduino_radio</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="oregon.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">plugins.oregon</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/plugins/nexa.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="oregon.html" title="plugins.oregon"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="arduino_radio.html" title="plugins.arduino_radio"
+             >previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../plugins_api.html" >Plugins API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Victor Creste, Raphaël Gautier and Valérian Justine.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

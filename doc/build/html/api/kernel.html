@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>kernel &mdash; Majordom 0.0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/icone.ico"/>
+    <link rel="top" title="Majordom 0.0.9 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api_reference.html" />
+    <link rel="next" title="generic_models" href="generic_models.html" />
+    <link rel="prev" title="API Reference" href="../api_reference.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="generic_models.html" title="generic_models"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../api_reference.html" title="API Reference"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../api_reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="kernel">
+<h1><a class="reference internal" href="#module-kernel" title="kernel"><tt class="xref py py-mod docutils literal"><span class="pre">kernel</span></tt></a><a class="headerlink" href="#kernel" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="../_images/inheritance-7637fd0f72c303cc016561a2db3776f234f3dc8c.png" alt="Inheritance diagram of kernel" usemap="#inheritance559fed9690" class="inheritance"/>
+<map id="inheritance559fed9690" name="inheritance559fed9690">
+<area shape="rect" id="node1" href="#kernel.Kernel" title="The Kernel class is the core of the Majordom system. It is its only immutable class: every other functionalities are implemented by plugins." alt="" coords="5,5,104,31"/>
+</map>
+</p>
+<div class="section" id="module-kernel">
+<span id="api"></span><h2>API<a class="headerlink" href="#module-kernel" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="kernel.Kernel">
+<em class="property">class </em><tt class="descclassname">kernel.</tt><tt class="descname">Kernel</tt><a class="headerlink" href="#kernel.Kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Kernel class is the core of the Majordom system. It is its only immutable class: every other functionalities are implemented by plugins.</p>
+<p>It is instantiated once at the beginning of the program and then gathers every handleable object in different lists, in order to make them accessible by other parts of the program (such as the User Interface):</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>protocols</strong> &#8211; (<tt class="xref py py-class docutils literal"><span class="pre">models.Protocol</span> <span class="pre">list</span></tt>) the list of protocols currently handled by the kernel</li>
+<li><strong>drivers</strong> &#8211; (<tt class="xref py py-class docutils literal"><span class="pre">models.Driver</span> <span class="pre">list</span></tt>) the list of hardware parts that may work with the system</li>
+<li><strong>interfaces</strong> &#8211; (<tt class="xref py py-class docutils literal"><span class="pre">models.Interface</span> <span class="pre">list</span></tt>) the list of available interfaces (http...)</li>
+<li><strong>device_models</strong> &#8211; (<tt class="xref py py-class docutils literal"><span class="pre">models.DeviceModel</span> <span class="pre">list</span></tt>) the list of device models available. This list allows the user to know which kind of devices he is able to add to Majordom.</li>
+<li><strong>block_models</strong> &#8211; (<tt class="xref py py-class docutils literal"><span class="pre">models.BlockModel</span> <span class="pre">list</span></tt>) the list of block models available. This is the way for the user to know what blocks that may be used within a scenario</li>
+<li><strong>devices</strong> &#8211; (<tt class="xref py py-class docutils literal"><span class="pre">models.Device</span> <span class="pre">list</span></tt>) the list of devices currently connected to the system</li>
+<li><strong>actions</strong> &#8211; (<tt class="xref py py-class docutils literal"><span class="pre">models.Action</span> <span class="pre">list</span></tt>) the list of actions available and available to be used in a scenario</li>
+<li><strong>infos</strong> &#8211; (<tt class="xref py py-class docutils literal"><span class="pre">models.Information</span> <span class="pre">list</span></tt>) the list of informations available and available to be used in a scenario</li>
+<li><strong>scenarios</strong> &#8211; (<tt class="xref py py-class docutils literal"><span class="pre">scenario.Scenario</span> <span class="pre">list</span></tt>) the scenarios created by the user (some may not be active)</li>
+<li><strong>next_scenario_id</strong> &#8211; (<tt class="xref py py-class docutils literal"><span class="pre">scenario.Scenario</span> <span class="pre">list</span></tt>) a counter of the number of the scenarios created until there: it is used to ID the scenario.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="kernel.Kernel.load_plugins">
+<tt class="descname">load_plugins</tt><big>(</big><big>)</big><a class="headerlink" href="#kernel.Kernel.load_plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads all plugins available in the plugin package/subdirectory, i.e. instantiates an instance of the main class of the plugin. If a plugin has already been loaded, it is ignored.</p>
+<dl class="docutils">
+<dt>If the plugin is a protocol plugin, this function performs the following operations:</dt>
+<dd><ul class="first last simple">
+<li>loading of the protocol class</li>
+<li>loading of all the device models bundled within the protocol plugin</li>
+</ul>
+</dd>
+</dl>
+<p>If the plugin is an automation plugin, it loads every of the block models bundled within the plugin.</p>
+<p>If the plugin is either a driver or an interface plugin, it simply loads the plugin.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Classes loaded through plugins are in fact singletons: they are only instantiated once by the kernel. Some kind of classes may obviously be instantiated several times in Majordom, such as the Device classes. You may have several instances of the same remote connected to Majordom: that is what Device Models are for: they are instantiated only once but allow you to instantiate the object they are &#8216;modelling&#8217; (such as a Device for a Device Model or a Block for a Block Model) several times.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="kernel.Kernel.add">
+<tt class="descname">add</tt><big>(</big><em>element</em><big>)</big><a class="headerlink" href="#kernel.Kernel.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the element given as argument to the corresponding objects list of the kernel.</p>
+<p>It auto-detects the type of the argument given and automatically appends to one of the lists of the kernel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> (<a class="reference internal" href="models.html#models.Information" title="models.Information"><tt class="xref py py-class docutils literal"><span class="pre">models.Information</span></tt></a> or <a class="reference internal" href="models.html#models.Action" title="models.Action"><tt class="xref py py-class docutils literal"><span class="pre">models.Action</span></tt></a> or <a class="reference internal" href="models.html#models.Device" title="models.Device"><tt class="xref py py-class docutils literal"><span class="pre">models.Device</span></tt></a> or <a class="reference internal" href="models.html#models.Interface" title="models.Interface"><tt class="xref py py-class docutils literal"><span class="pre">models.Interface</span></tt></a> or <a class="reference internal" href="models.html#models.Protocol" title="models.Protocol"><tt class="xref py py-class docutils literal"><span class="pre">models.Protocol</span></tt></a> or <a class="reference internal" href="models.html#models.Driver" title="models.Driver"><tt class="xref py py-class docutils literal"><span class="pre">models.Driver</span></tt></a> or <a class="reference internal" href="scenario.html#scenario.Scenario" title="scenario.Scenario"><tt class="xref py py-class docutils literal"><span class="pre">scenario.Scenario</span></tt></a> or <a class="reference internal" href="models.html#models.BlockModel" title="models.BlockModel"><tt class="xref py py-class docutils literal"><span class="pre">models.BlockModel</span></tt></a>) &#8211; The element to add to the kernel</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Raises TypeError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">if the element given as argument is of none of the types given above.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kernel.Kernel.add_new_scenario">
+<tt class="descname">add_new_scenario</tt><big>(</big><em>settings</em>, <em>yeah_id=None</em>, <em>next_block_id=0</em>, <em>next_link_id=0</em><big>)</big><a class="headerlink" href="#kernel.Kernel.add_new_scenario" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new scenario to the kernel, using the settings given as argument. Other optional arguments may be given - they are only used when this function is used in the process of persistence: at restoration, we must ensure that scenarios have the same id than they had before saving.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>settings</strong> &#8211; The settings dictionary that will be used to initialize the scenario.</li>
+<li><strong>yeah_id</strong> &#8211; (optional) the id to give to the new scenario, only used in the process of persistence.</li>
+<li><strong>next_block_id</strong> &#8211; (optional) used to set the next_block_id attribute of the new scenario, only used in the process of persistence</li>
+<li><strong>next_link_id</strong> &#8211; (optional) sed to set the next_link_id attribute of the new scenario, only used in the process of persistence</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kernel.Kernel.get_from_list">
+<tt class="descname">get_from_list</tt><big>(</big><em>maj_id</em>, <em>kernel_list</em><big>)</big><a class="headerlink" href="#kernel.Kernel.get_from_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the element whose ID is maj_id if it is in the list kernel_list. Otherwise, it returns False.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>maj_id</strong> &#8211; the ID of the researched element</li>
+<li><strong>maj_id</strong> &#8211; the list in which to look for the researched element</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the researched element or False</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returntype:</th><td class="field-body"><p class="first last"><tt class="xref py py-class docutils literal"><span class="pre">bool</span></tt> or any Majordom class</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kernel.Kernel.get">
+<tt class="descname">get</tt><big>(</big><em>maj_id</em><big>)</big><a class="headerlink" href="#kernel.Kernel.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the element whose ID is maj_id if it is in any of the lists of the kernel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maj_id</strong> &#8211; the ID of the researched element</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the researched element or False</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returntype:</th><td class="field-body"><tt class="xref py py-class docutils literal"><span class="pre">bool</span></tt> or any Majordom class</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kernel.Kernel.remove_from_list">
+<tt class="descname">remove_from_list</tt><big>(</big><em>yeah_id</em>, <em>kernel_list</em><big>)</big><a class="headerlink" href="#kernel.Kernel.remove_from_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes and returns the element whose ID is maj_id if it is in the list kernel_list. Otherwise, it returns False.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>maj_id</strong> &#8211; the ID of the researched element</li>
+<li><strong>maj_id</strong> &#8211; the list in which to look for the researched element</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the researched element or False</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returntype:</th><td class="field-body"><p class="first last"><tt class="xref py py-class docutils literal"><span class="pre">bool</span></tt> or any Majordom class</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kernel.Kernel.remove">
+<tt class="descname">remove</tt><big>(</big><em>yeah_id</em><big>)</big><a class="headerlink" href="#kernel.Kernel.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes and returns the element whose ID is maj_id if it is in any of the lists of the kernel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maj_id</strong> &#8211; the ID of the researched element</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the researched element or False</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returntype:</th><td class="field-body"><tt class="xref py py-class docutils literal"><span class="pre">bool</span></tt> or any Majordom class</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kernel.Kernel.save">
+<tt class="descname">save</tt><big>(</big><big>)</big><a class="headerlink" href="#kernel.Kernel.save" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(Do not use)</em> Function written to enable persistence, i.e. capability to save and then restore the state of the Majordom system. Due to software architecture evolutions, this method has become obsolete and should therefore <strong>not be used</strong>. It will be fixed in next versions but was not a priority for the release of the 0.0.9 version.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kernel.Kernel.restore">
+<tt class="descname">restore</tt><big>(</big><big>)</big><a class="headerlink" href="#kernel.Kernel.restore" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(Do not use)</em> Similarly to the save function above, this function was written to enable persistence. Due to software architecture evolutions, this method has become obsolete and should therefore <strong>not be used</strong>. It will be fixed in next versions but was not a priority for the release of the 0.0.9 version.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">kernel</span></tt></a><ul>
+<li><a class="reference internal" href="#module-kernel">API</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../api_reference.html"
+                        title="previous chapter">API Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="generic_models.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">generic_models</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/kernel.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="generic_models.html" title="generic_models"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../api_reference.html" title="API Reference"
+             >previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../api_reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Victor Creste, Raphaël Gautier and Valérian Justine.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

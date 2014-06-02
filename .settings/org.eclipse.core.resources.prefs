@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//archive/kivy/kivy-as-main.py=utf-8
+encoding//archive/tests/test-plugin_433radio.py=utf-8
+encoding//archive/tests/test-plugin_nexa.py=utf-8
+encoding//archive/tests/test-tkinterface.py=utf-8
+encoding//plugins/arduino_radio.py=utf-8
+encoding//plugins/base_blocks.py=utf-8
+encoding//plugins/http_interface.py=utf-8
+encoding//plugins/nexa.py=utf-8
+encoding//plugins/oregon.py=utf-8
+encoding/generic_models.py=utf-8
+encoding/kernel.py=utf-8
+encoding/main.py=utf-8
+encoding/models.py=utf-8
+encoding/scenario.py=utf-8

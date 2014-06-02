@@ -1,0 +1,6 @@
+<map id="inheritancefcd7da106f" name="inheritancefcd7da106f">
+<area shape="rect" id="node1" href="../api/generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through a unique ID. The ID is obtained according various processes wich depend on the class of the object. Though, in all cases, they are given so that they are unique." alt="" coords="25,5,216,31"/>
+<area shape="rect" id="node2" href="../api/generic_models.html#generic_models.SettableObject" title="Class used to normalize the access to an object&#39;s settings." alt="" coords="19,79,222,104"/>
+<area shape="rect" id="node3" href="../api/models.html#models.Interface" title="The class :class:`models.Interface` defines the minimal public " alt="" coords="62,152,179,177"/>
+<area shape="rect" id="node4" href="#plugins.http_interface.HTTPInterface" title="Class implementing the Interface interface to make Majordom accessible through HTTP." alt="" coords="5,225,236,251"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="inheritance1a8f778eaf" name="inheritance1a8f778eaf">
+<area shape="rect" id="node1" href="generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through a unique ID. The ID is obtained according various processes wich depend on the class of the object. Though, in all cases, they are given so that they are unique." alt="" coords="277,5,468,31"/>
+<area shape="rect" id="node2" href="generic_models.html#generic_models.SettableObject" title="Class used to normalize the access to an object&#39;s settings." alt="" coords="93,79,295,104"/>
+<area shape="rect" id="node5" href="#scenario.Node" title="scenario.Node" alt="" coords="320,79,425,104"/>
+<area shape="rect" id="node6" href="#scenario.Link" title="scenario.Link" alt="" coords="450,79,549,104"/>
+<area shape="rect" id="node3" href="#scenario.Block" title="scenario.Block" alt="" coords="5,152,113,177"/>
+<area shape="rect" id="node9" href="#scenario.Scenario" title="Within Majordom, Scenarios are used to implement the automatic behaviors of Majordom." alt="" coords="137,152,264,177"/>
+<area shape="rect" id="node4" href="#scenario.InputNode" title="scenario.InputNode" alt="" coords="301,152,434,177"/>
+<area shape="rect" id="node7" href="#scenario.MultiInputNode" title="scenario.MultiInputNode" alt="" coords="191,225,352,251"/>
+<area shape="rect" id="node10" href="#scenario.SimpleInputNode" title="scenario.SimpleInputNode" alt="" coords="377,225,550,251"/>
+<area shape="rect" id="node8" href="#scenario.OutputNode" title="scenario.OutputNode" alt="" coords="458,152,602,177"/>
+</map>

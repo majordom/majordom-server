@@ -1,0 +1,9 @@
+<map id="inheritancea94c14b0d9" name="inheritancea94c14b0d9">
+<area shape="rect" id="node1" href="../api/generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through a unique ID. The ID is obtained according various processes wich depend on the class of the object. Though, in all cases, they are given so that they are unique." alt="" coords="20,5,187,27"/>
+<area shape="rect" id="node2" href="../api/generic_models.html#generic_models.SettableObject" title="Class used to normalize the access to an object&#39;s settings." alt="" coords="15,69,193,91"/>
+<area shape="rect" id="node3" href="../api/models.html#models.Driver" title="In the model used to design the box, a class deriving from " alt="" coords="60,133,148,156"/>
+<area shape="rect" id="node4" href="#plugins.arduino_radio.ArduinoRadio" title="Driver class implementing the interface between the computer" alt="" coords="5,198,203,220"/>
+<area shape="rect" id="node5" href="#plugins.arduino_radio.RadioSequenceProcessing" title="Subclass of :class:`threading.Thread`. It is the thread that waits for incoming radio messages in the buffer and processes them one after the other." alt="" coords="214,69,481,91"/>
+<area shape="rect" id="node6" title="A class that represents a thread of control." alt="" coords="438,5,542,27"/>
+<area shape="rect" id="node7" href="#plugins.arduino_radio.RadioSequenceReception" title="Subclass of :class:`threading.Thread`. It is the thread used to poll the Serial interface in order to detext whether or not an incoming message has arrived. If a new message is available, it is added to the driver&#39;s buffer to be subsequently sent to all the driver&#39;s observers by the RadioSequenceProcessing thread." alt="" coords="502,69,763,91"/>
+</map>

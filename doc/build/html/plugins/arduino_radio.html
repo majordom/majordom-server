@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>plugins.arduino_radio &mdash; Majordom 0.0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/icone.ico"/>
+    <link rel="top" title="Majordom 0.0.9 documentation" href="../index.html" />
+    <link rel="up" title="Plugins API" href="../plugins_api.html" />
+    <link rel="next" title="plugins.nexa" href="nexa.html" />
+    <link rel="prev" title="Plugins API" href="../plugins_api.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="nexa.html" title="plugins.nexa"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../plugins_api.html" title="Plugins API"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../plugins_api.html" accesskey="U">Plugins API</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="plugins-arduino-radio">
+<h1><a class="reference internal" href="#module-plugins.arduino_radio" title="plugins.arduino_radio"><tt class="xref py py-mod docutils literal"><span class="pre">plugins.arduino_radio</span></tt></a><a class="headerlink" href="#plugins-arduino-radio" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="../_images/inheritance-370d6982ca8a78dc3d4a450454962f2a6e5dd072.png" alt="Inheritance diagram of plugins.arduino_radio" usemap="#inheritancea94c14b0d9" class="inheritance"/>
+<map id="inheritancea94c14b0d9" name="inheritancea94c14b0d9">
+<area shape="rect" id="node1" href="../api/generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through a unique ID. The ID is obtained according various processes wich depend on the class of the object. Though, in all cases, they are given so that they are unique." alt="" coords="20,5,187,27"/>
+<area shape="rect" id="node2" href="../api/generic_models.html#generic_models.SettableObject" title="Class used to normalize the access to an object&#39;s settings." alt="" coords="15,69,193,91"/>
+<area shape="rect" id="node3" href="../api/models.html#models.Driver" title="In the model used to design the box, a class deriving from " alt="" coords="60,133,148,156"/>
+<area shape="rect" id="node4" href="#plugins.arduino_radio.ArduinoRadio" title="Driver class implementing the interface between the computer" alt="" coords="5,198,203,220"/>
+<area shape="rect" id="node5" href="#plugins.arduino_radio.RadioSequenceProcessing" title="Subclass of :class:`threading.Thread`. It is the thread that waits for incoming radio messages in the buffer and processes them one after the other." alt="" coords="214,69,481,91"/>
+<area shape="rect" id="node6" title="A class that represents a thread of control." alt="" coords="438,5,542,27"/>
+<area shape="rect" id="node7" href="#plugins.arduino_radio.RadioSequenceReception" title="Subclass of :class:`threading.Thread`. It is the thread used to poll the Serial interface in order to detext whether or not an incoming message has arrived. If a new message is available, it is added to the driver&#39;s buffer to be subsequently sent to all the driver&#39;s observers by the RadioSequenceProcessing thread." alt="" coords="502,69,763,91"/>
+</map>
+</p>
+<div class="section" id="module-plugins.arduino_radio">
+<span id="api"></span><h2>API<a class="headerlink" href="#module-plugins.arduino_radio" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="plugins.arduino_radio.RadioSequenceReception">
+<em class="property">class </em><tt class="descclassname">plugins.arduino_radio.</tt><tt class="descname">RadioSequenceReception</tt><big>(</big><em>driver</em>, <em>serial</em><big>)</big><a class="headerlink" href="#plugins.arduino_radio.RadioSequenceReception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></tt></p>
+<p>Subclass of <tt class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></tt>. It is the thread used to poll the Serial interface in order to detext whether or not an incoming message has arrived. If a new message is available, it is added to the driver&#8217;s buffer to be subsequently sent to all the driver&#8217;s observers by the RadioSequenceProcessing thread.</p>
+<dl class="method">
+<dt id="plugins.arduino_radio.RadioSequenceReception.run">
+<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#plugins.arduino_radio.RadioSequenceReception.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function called when the thread is launched.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.arduino_radio.RadioSequenceReception.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#plugins.arduino_radio.RadioSequenceReception.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function called to stop the thread.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plugins.arduino_radio.RadioSequenceProcessing">
+<em class="property">class </em><tt class="descclassname">plugins.arduino_radio.</tt><tt class="descname">RadioSequenceProcessing</tt><big>(</big><em>driver</em><big>)</big><a class="headerlink" href="#plugins.arduino_radio.RadioSequenceProcessing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></tt></p>
+<p>Subclass of <tt class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></tt>. It is the thread that waits for incoming radio messages in the buffer and processes them one after the other.</p>
+<dl class="method">
+<dt id="plugins.arduino_radio.RadioSequenceProcessing.run">
+<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#plugins.arduino_radio.RadioSequenceProcessing.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function called when the thread is launched.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.arduino_radio.RadioSequenceProcessing.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#plugins.arduino_radio.RadioSequenceProcessing.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function called to stop the thread.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plugins.arduino_radio.ArduinoRadio">
+<em class="property">class </em><tt class="descclassname">plugins.arduino_radio.</tt><tt class="descname">ArduinoRadio</tt><a class="headerlink" href="#plugins.arduino_radio.ArduinoRadio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/models.html#models.Driver" title="models.Driver"><tt class="xref py py-class docutils literal"><span class="pre">models.Driver</span></tt></a></p>
+<p>Driver class implementing the interface between the computer
+running Majordom and the Arduino, which is used as 
+a 433MHz radio modem.</p>
+<dl class="method">
+<dt id="plugins.arduino_radio.ArduinoRadio.set">
+<tt class="descname">set</tt><big>(</big><em>settings</em><big>)</big><a class="headerlink" href="#plugins.arduino_radio.ArduinoRadio.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides the same method of the :class`SettableObject` in order 
+to dynamically manage the &#8216;com_port&#8217; field of the settings that is specific
+to Drivers.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.arduino_radio.ArduinoRadio.initialize_radio_reception">
+<tt class="descname">initialize_radio_reception</tt><big>(</big><big>)</big><a class="headerlink" href="#plugins.arduino_radio.ArduinoRadio.initialize_radio_reception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the serial communication used by the domotic 
+box to communicate with the Arduino. If the given COM
+port number is not valid (i.e. it raises a SerialException
+when we try to open the connection) the method raises 
+the same serial.SerialException.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.arduino_radio.ArduinoRadio.bind">
+<tt class="descname">bind</tt><big>(</big><em>protocol</em><big>)</big><a class="headerlink" href="#plugins.arduino_radio.ArduinoRadio.bind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the protocol object given as argument
+to the list of protocols that receive their messages
+through this modem. 
+When the modem receives a radio sequence, it will 
+send it to the whole list of its observers.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.arduino_radio.ArduinoRadio.unbind">
+<tt class="descname">unbind</tt><big>(</big><em>protocol</em><big>)</big><a class="headerlink" href="#plugins.arduino_radio.ArduinoRadio.unbind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="plugins.arduino_radio.ArduinoRadio.notify_protocols">
+<tt class="descname">notify_protocols</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#plugins.arduino_radio.ArduinoRadio.notify_protocols" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(Internal)</em> Notifies all the protocols that are observing this
+modem that an incoming radio message has arrived.
+The received sequence is given as argument so that each
+protocol can handle the decoding.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.arduino_radio.ArduinoRadio.format_arg">
+<tt class="descname">format_arg</tt><big>(</big><em>binary</em><big>)</big><a class="headerlink" href="#plugins.arduino_radio.ArduinoRadio.format_arg" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(Internal)</em> Formats a binary sequence so that it fits the format 
+of the parameters of a command sent to the Arduino. This
+method is called by the send_sequence method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plugins.arduino_radio.ArduinoRadio.send_message">
+<tt class="descname">send_message</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#plugins.arduino_radio.ArduinoRadio.send_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends the radio message given as an argument.</p>
+<p>The <em>message</em> dictionary must have the following format :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="73%" />
+<col width="27%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>number_of_repetitions</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>base_radio_pulse_length_in_microseconds</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>symbol_1</td>
+<td>binary_string</td>
+</tr>
+<tr class="row-odd"><td>symbol_2</td>
+<td>binary_string</td>
+</tr>
+<tr class="row-even"><td>...</td>
+<td>binary_string</td>
+</tr>
+<tr class="row-odd"><td>symbol_n</td>
+<td>binary_string</td>
+</tr>
+<tr class="row-even"><td>symbol_coded_message</td>
+<td>symbols_list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="plugins.arduino_radio.driver_class">
+<tt class="descclassname">plugins.arduino_radio.</tt><tt class="descname">driver_class</tt><a class="headerlink" href="#plugins.arduino_radio.driver_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#plugins.arduino_radio.ArduinoRadio" title="plugins.arduino_radio.ArduinoRadio"><tt class="xref py py-class docutils literal"><span class="pre">ArduinoRadio</span></tt></a></p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">plugins.arduino_radio</span></tt></a><ul>
+<li><a class="reference internal" href="#module-plugins.arduino_radio">API</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../plugins_api.html"
+                        title="previous chapter">Plugins API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="nexa.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">plugins.nexa</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/plugins/arduino_radio.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="nexa.html" title="plugins.nexa"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../plugins_api.html" title="Plugins API"
+             >previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../plugins_api.html" >Plugins API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Victor Creste, Raphaël Gautier and Valérian Justine.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

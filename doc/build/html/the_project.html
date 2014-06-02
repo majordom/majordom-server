@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Project &mdash; Majordom 0.0.9 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/icone.ico"/>
+    <link rel="top" title="Majordom 0.0.9 documentation" href="index.html" />
+    <link rel="next" title="First-steps guide" href="first_steps.html" />
+    <link rel="prev" title="Majordom - open-source home automation control center" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="first_steps.html" title="First-steps guide"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Majordom - open-source home automation control center"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Majordom 0.0.9 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-project">
+<h1>The Project<a class="headerlink" href="#the-project" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This project aims at designing a home automation control center. The main characteristics we identified as being essential are the following:</p>
+<ul>
+<li><p class="first">adaptativeness as regards to home automation protocols</p>
+<blockquote>
+<div><p>Many protocols, open-source or proprietary, are today used in the field of home automation. To be competitive, a home automation control center must therefore ensure compatibility with all these protocols.</p>
+<p>Although, it doesn&#8217;t seem nor reasonable nor interesting to have an exhaustive compatibility list from the first version of the system onwards.</p>
+<p>That is why we chose to use a plugin system in which users (that is you) can improve the compatibility of their system by downloading and installing new plugins. These plugins extend the compatibility of the box to other protocols or to other hardware parts.</p>
+<p>With this system, any interested and motivated user (like you) can just develop new plugins and share them with the community: the only constraint is to respect the interfaces described in the <a class="reference internal" href="api_reference.html"><em>API Reference</em></a>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">remote access to the control center</p>
+<blockquote>
+<div><p>Such a system must imperatively be accessible from outside the house. At work or on vacation, the user must be able to keep an eye on the state of his house, but also to remotely modify the automatic working of his house to his liking.</p>
+<p>To make all that possible, the system must have an outer interface that other applications (a web server, an Android or iOS app...) can use. We developed a base API plugin, see <a class="reference internal" href="plugins/http_interface.html"><em>HTTP interface</em></a></p>
+<p>We also developed a cross-platform app using the <a class="reference external" href="http://www.kivy.org">Kivy</a> framework. The app is described in the <a class="reference internal" href="first_steps.html"><em>First-steps guide</em></a> and its python documentation is available : <a class="reference internal" href="majordom_app_api.html"><em>&lt;no title&gt;</em></a>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">very easy-to-use scenarios creation system</p>
+<blockquote>
+<div><p>Once you have connected devices from various protocols to the box, you may want to do a little more than just watching them.</p>
+<p>The idea is to gather the info coming from them and the actions made available by them in order to create custom automatic behaviours from the system, that we call scenarios.</p>
+<p>Scenarios consist of infos, actions and other blocks which allow to easily program new automatic behaviours, in a graphical way. In the scenario editor of the Majordom App, you add and move blocks, and create links between nodes. Once you are done building the scenario, you just have to activate it. The simplest scenario would be that a light switches on when a button is pressed.</p>
+<p>To know more about scenarios, see <a class="reference internal" href="api/scenario.html"><em>scenario</em></a>.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p>The present version of Majordom is a prototype, it only offers a limited set on features.</p>
+<div class="section" id="home-automation-hardware-support">
+<h3>Home Automation Hardware Support<a class="headerlink" href="#home-automation-hardware-support" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><strong>handling of our custom Arduino RF 433MHz modem</strong></p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>handling of the Nexa protocol and the main nexa devices</strong>:</dt>
+<dd><ul class="first last simple">
+<li>Nexa 3 Button Remote</li>
+<li>Nexa 2 Button Switch</li>
+<li>Nexa Opening Sensor</li>
+<li>Nexa Movement Sensor</li>
+<li>any Nexa-controlled device (remote-controlled plugs...)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="scenarios-editing">
+<h3>Scenarios editing<a class="headerlink" href="#scenarios-editing" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt><strong>build graphical scenarios</strong> making use of:</dt>
+<dd><ul class="first last simple">
+<li>the infos and actions made available by the connected devices</li>
+<li>a set of base processing blocks available in the <tt class="xref doc docutils literal"><span class="pre">plugins/base_blocks</span></tt> plugin.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">activate scenarios and <strong>make your home autonomous</strong></p>
+</li>
+</ul>
+</div>
+<div class="section" id="majordom-server-interface-and-majordom-client-app">
+<h3>Majordom server interface and Majordom client app<a class="headerlink" href="#majordom-server-interface-and-majordom-client-app" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><strong>http-based API</strong> receiving and sending json messages on the server side</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>cross-platform Majordom client app</strong> featuring:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt><strong>control panel</strong></dt>
+<dd><p class="first last">In a single panel, you can access the state of every device connected to Majordom. It also allows you to manually use connected devices.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>settings panel</strong></dt>
+<dd><p class="first last">It allows you to access the main settings of Majordom.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>step-by-step adding device wizard</strong></dt>
+<dd><p class="first last">Every action required to add a device to the system is carefully explained: without any previous knowledge of the home automation devices you are using, you are able to add them to Majordom.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>touch-optimized scenarios editor</strong></dt>
+<dd><p class="first last">This is the main feature of the system. It allows you to take fully control over your home, in a very simple manner.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="requirements">
+<span id="id1"></span><h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>In order to run the Majordom server, you need to have the following components installed on your computer:</p>
+<ul class="simple">
+<li>Python 2.7 (<a class="reference external" href="https://www.python.org/downloads/">Python Downloads</a> )</li>
+<li>the pyserial library (<a class="reference external" href="https://pypi.python.org/pypi/pyserial">on PyPi</a> )</li>
+<li>the bitarray library (<a class="reference external" href="https://pypi.python.org/pypi/bitarray/">on PyPi</a> )</li>
+</ul>
+<p>In order to run the Majordom App, since it has not yet been cross-compiled, you need the Kivy Framework to run it:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://kivy.org/#download">Kivy Framework</a></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<span id="id3"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To run the Majordom server and clients apps, please check first that you fullfil the requirements described above.</p>
+<p>Once you do, go to our <a class="reference external" href="https://github.com/majordom/majordom-server">GitHub repo</a> and download the latest version of the Majordom server app. You then just have to run main.py to launch the system. If you let the <a class="reference internal" href="plugins/http_interface.html"><em>HTTP interface</em></a> plugin in the plugins directory, an http server should now be running on your machine.</p>
+<p>Now, in order to actually use Majordom, download the client app on <a class="reference external" href="https://github.com/majordom/majordom-app">our repo</a>. Then, follow Kivy&#8217;s installation guide which matches your own test platform. Once you are able to launch a Kivy app on your platform, just launch the main.py file <em>the kivy way</em>.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>In order to develop Majordom, we used a various set of pre-existing technologies, that are worth checking out if you do not already know them.</p>
+<ul>
+<li><p class="first">Arduino</p>
+<blockquote>
+<div><p>The Arduino is <em>the</em> widest-spread open-source electronics prototyping board. Therefore, it comes with an enormous user community which has already made up solutions to almost all of your problems.
+Check their website at <a class="reference external" href="http://arduino.cc/">http://arduino.cc/</a>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Python</p>
+<blockquote>
+<div><p>Python is an easy-to-use and yet powerful programming language. You can write code without knowing much about programming. But you won&#8217;t either get bored or blocked if you try to build a more complex system with it.
+Check Python at <a class="reference external" href="https://www.python.org/">https://www.python.org/</a>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">pySerial</p>
+<blockquote>
+<div><p>PySerial is a serial library for Python. It is therefore very useful in order to communicate with the Arduino. We only regret the lack of interruptions handling, which forces you to keep a thread polling the serial interface when you are waiting for an asynchronous communication.
+Check it at <a class="reference external" href="http://pyserial.sourceforge.net/">http://pyserial.sourceforge.net/</a>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">bitarray</p>
+<blockquote>
+<div><p>bitarray is a library which makes it easier to handle bits sequences in Python. Bits handling is indeed not as easy in Python as it is in C anda library becomes therefore necessary.
+Chech it at <a class="reference external" href="https://pypi.python.org/pypi/bitarray/">https://pypi.python.org/pypi/bitarray/</a>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Kivy</p>
+<blockquote>
+<div><p>Kivy is an open-source and cross-platform framework for graphical user interfaces. It allows you to develop a single app and then compileit for Windows, Linux, iOS or Android. Its documentation is rather well written and the community using the framework is constantly growing.
+If you need to build an app, don&#8217;t forget to check <a class="reference external" href="http://www.kivy.org">http://www.kivy.org</a>.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The Project</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#features">Features</a><ul>
+<li><a class="reference internal" href="#home-automation-hardware-support">Home Automation Hardware Support</a></li>
+<li><a class="reference internal" href="#scenarios-editing">Scenarios editing</a></li>
+<li><a class="reference internal" href="#majordom-server-interface-and-majordom-client-app">Majordom server interface and Majordom client app</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Majordom - open-source home automation control center</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="first_steps.html"
+                        title="next chapter">First-steps guide</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/the_project.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="first_steps.html" title="First-steps guide"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Majordom - open-source home automation control center"
+             >previous</a> |</li>
+        <li><a href="index.html">Majordom 0.0.9 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Victor Creste, Raphaël Gautier and Valérian Justine.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

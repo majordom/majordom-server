@@ -1,0 +1,5 @@
+<map id="inheritance9768444a4c" name="inheritance9768444a4c">
+<area shape="rect" id="node1" href="#generic_models.AttributeNotSet" title="Raised when an object tries to use an object whose" alt="" coords="5,5,212,31"/>
+<area shape="rect" id="node2" href="#generic_models.IDableObject" title="Class of an object which is accessible through" alt="" coords="236,5,427,31"/>
+<area shape="rect" id="node3" href="#generic_models.SettableObject" title="generic_models.SettableObject" alt="" coords="230,79,433,104"/>
+</map>

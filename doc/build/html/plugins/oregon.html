@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>plugins.oregon &mdash; Majordom 0.0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/icone.ico"/>
+    <link rel="top" title="Majordom 0.0.9 documentation" href="../index.html" />
+    <link rel="up" title="Plugins API" href="../plugins_api.html" />
+    <link rel="next" title="HTTP interface" href="http_interface.html" />
+    <link rel="prev" title="plugins.nexa" href="nexa.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="http_interface.html" title="HTTP interface"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="nexa.html" title="plugins.nexa"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../plugins_api.html" accesskey="U">Plugins API</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="plugins-oregon">
+<h1><a class="reference internal" href="#module-plugins.oregon" title="plugins.oregon"><tt class="xref py py-mod docutils literal"><span class="pre">plugins.oregon</span></tt></a><a class="headerlink" href="#plugins-oregon" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="../_images/inheritance-0e6a64b593f2b4b9788b65cdf82716269d494ea4.png" alt="Inheritance diagram of plugins.oregon" usemap="#inheritance51332faf4b" class="inheritance"/>
+<map id="inheritance51332faf4b" name="inheritance51332faf4b">
+<area shape="rect" id="node1" href="../api/generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through" alt="" coords="267,5,457,31"/>
+<area shape="rect" id="node2" href="../api/generic_models.html#generic_models.SettableObject" title="generic_models.SettableObject" alt="" coords="261,79,463,104"/>
+<area shape="rect" id="node3" href="../api/models.html#models.Device" title="Base class for any Device." alt="" coords="229,152,335,177"/>
+<area shape="rect" id="node4" href="../api/models.html#models.Protocol" title="In the model used to design the box, a class deriving from " alt="" coords="384,152,500,177"/>
+<area shape="rect" id="node6" href="#plugins.oregon.Oregon" title="Main class of a protocol plugin." alt="" coords="390,225,542,251"/>
+</map>
+</p>
+<div class="section" id="module-plugins.oregon">
+<span id="api"></span><h2>API<a class="headerlink" href="#module-plugins.oregon" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="plugins.oregon.Oregon">
+<em class="property">class </em><tt class="descclassname">plugins.oregon.</tt><tt class="descname">Oregon</tt><big>(</big><em>kernel</em><big>)</big><a class="headerlink" href="#plugins.oregon.Oregon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/models.html#models.Protocol" title="models.Protocol"><tt class="xref py py-class docutils literal"><span class="pre">models.Protocol</span></tt></a></p>
+<p>Main class of a protocol plugin.</p>
+<dl class="method">
+<dt id="plugins.oregon.Oregon.decode_message">
+<tt class="descname">decode_message</tt><big>(</big><em>radio_sequence</em><big>)</big><a class="headerlink" href="#plugins.oregon.Oregon.decode_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes a radio sequence received by the radio modem 
+into a message understable by the protocol.
+The implementation of the sequence processing is , for the
+moment, a hard-coded finite-state machine.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">plugins.oregon</span></tt></a><ul>
+<li><a class="reference internal" href="#module-plugins.oregon">API</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="nexa.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">plugins.nexa</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="http_interface.html"
+                        title="next chapter">HTTP interface</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/plugins/oregon.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="http_interface.html" title="HTTP interface"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="nexa.html" title="plugins.nexa"
+             >previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../plugins_api.html" >Plugins API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Victor Creste, Raphaël Gautier and Valérian Justine.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

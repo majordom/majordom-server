@@ -1,0 +1,8 @@
+<map id="inheritance7a7dbf4143" name="inheritance7a7dbf4143">
+<area shape="rect" id="node1" href="../api/generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through" alt="" coords="351,2,414,10"/>
+<area shape="rect" id="node2" href="../api/generic_models.html#generic_models.SettableObject" title="generic_models.SettableObject" alt="" coords="270,26,336,34"/>
+<area shape="rect" id="node3" href="../api/models.html#models.Device" title="Base class for any Device." alt="" coords="200,50,236,59"/>
+<area shape="rect" id="node5" href="../api/models.html#models.Protocol" title="In the model used to design the box, a class deriving from " alt="" coords="284,50,322,59"/>
+<area shape="rect" id="node13" href="#plugins.nexa.NexaDevice" title="This is the class used to implement any Nexa&#45;controlled device." alt="" coords="239,74,294,83"/>
+<area shape="rect" id="node6" href="#plugins.nexa.Nexa" title="Main class of the Nexa protocol plugin." alt="" coords="302,74,345,83"/>
+</map>

@@ -1,0 +1,17 @@
+Graph
+=====
+
+.. digraph:: functional_overview
+
+   "Display" -> "Information";
+   "Display" -> "Action";
+   
+   "Set" -> "Scenario";
+   "Set" -> "Information";
+   "Set" -> "Action";
+   "Set" -> "Device";
+   "Set" -> "Protocol";
+   "Set" -> "Driver";
+   
+   "Add" -> "Scenario";
+   "Add" -> "Device";

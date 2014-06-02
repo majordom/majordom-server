@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scenario &mdash; Majordom 0.0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/icone.ico"/>
+    <link rel="top" title="Majordom 0.0.9 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api_reference.html" />
+    <link rel="next" title="Plugins API" href="../plugins_api.html" />
+    <link rel="prev" title="models" href="models.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../plugins_api.html" title="Plugins API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="models.html" title="models"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../api_reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scenario">
+<h1><a class="reference internal" href="#module-scenario" title="scenario"><tt class="xref py py-mod docutils literal"><span class="pre">scenario</span></tt></a><a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="../_images/inheritance-89692e17ca92034cd32c9ae34490dbf8f544ea5b.png" alt="Inheritance diagram of scenario" usemap="#inheritance1a8f778eaf" class="inheritance"/>
+<map id="inheritance1a8f778eaf" name="inheritance1a8f778eaf">
+<area shape="rect" id="node1" href="generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through a unique ID. The ID is obtained according various processes wich depend on the class of the object. Though, in all cases, they are given so that they are unique." alt="" coords="277,5,468,31"/>
+<area shape="rect" id="node2" href="generic_models.html#generic_models.SettableObject" title="Class used to normalize the access to an object&#39;s settings." alt="" coords="93,79,295,104"/>
+<area shape="rect" id="node5" href="#scenario.Node" title="*(abstract class)* This is the base class for any Node subclass. It implements the minimum interface that any Node subclass should implement." alt="" coords="320,79,425,104"/>
+<area shape="rect" id="node6" href="#scenario.Link" title="The Links are used to connect nodes within a scenario. Their exact purpose are highlighted in the :class:`scenario.Scenario` class documentation." alt="" coords="450,79,549,104"/>
+<area shape="rect" id="node3" href="#scenario.Block" title="The Block class defines the minimum interface that any Block should implement." alt="" coords="5,152,113,177"/>
+<area shape="rect" id="node9" href="#scenario.Scenario" title="Within Majordom, Scenarios are used to implement the automatic behaviors of Majordom." alt="" coords="137,152,264,177"/>
+<area shape="rect" id="node4" href="#scenario.InputNode" title="*(abstract class)* Base class for any input node." alt="" coords="301,152,434,177"/>
+<area shape="rect" id="node7" href="#scenario.MultiInputNode" title="Implementation of the InputNode interface in the case of an input node which accepts several links. Several links may have this node as destination node. It may be used for blocks such as &#39;Logical And&#39;: you have no reason to limit the number of values of which you compute the logical and." alt="" coords="191,225,352,251"/>
+<area shape="rect" id="node10" href="#scenario.SimpleInputNode" title="Implementation of the InputNode interface in the case of an input node which only accepts a single link. A single link has this kind of node as destination." alt="" coords="377,225,550,251"/>
+<area shape="rect" id="node8" href="#scenario.OutputNode" title="Implementation of the Node interface for an output node." alt="" coords="458,152,602,177"/>
+</map>
+</p>
+<div class="section" id="module-scenario">
+<span id="api"></span><h2>API<a class="headerlink" href="#module-scenario" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="scenario.Scenario">
+<em class="property">class </em><tt class="descclassname">scenario.</tt><tt class="descname">Scenario</tt><big>(</big><em>kernel</em>, <em>next_block_id=0</em>, <em>next_link_id=0</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#scenario.Scenario" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generic_models.html#generic_models.SettableObject" title="generic_models.SettableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.SettableObject</span></tt></a></p>
+<p>Within Majordom, Scenarios are used to implement the automatic behaviors of Majordom.</p>
+<p>A scenario is a model of automatic behavior: we chose to represent automatic behaviors with blocks which hace specific input and output nodes. Links can be drawn between these nodes. Once the scenario edition has been completed, the scenario can be activated and the system will behave accordingly to the way it was programmed.</p>
+<p>There are three main kinds of blocks: the actions, the infos and the (processing) blocks.</p>
+<ul class="simple">
+<li><strong>Actions</strong> only have inputs: one trigger and all the inputs corresponding to their execution arguments.</li>
+<li><strong>Informations</strong> only have a single output: it is the value of the information. The output node of an information if refreshed every time the information node is refreshed.</li>
+<li><strong>Blocks</strong> may have inputs and outputs. The value of their outputs are evaluated depending on the value of their inputs and the processing method implemented within the block. Blocks are written in Python, following a very simple programmation interface described below.</li>
+</ul>
+<p>You can add as many blocks as you want in a scenario. Then, link their nodes with Links. When the scenario is activated, every Link of the scenario is consequently activated. When a Link is activated, it creates an observer-pattern relationship between the two linked nodes. This way, when the value of the source node of the link changes, the destination link knows about it and subsequently updates its own value. This mecanism ensures the propagation of the change of any of the system&#8217;s inputs.</p>
+<dl class="attribute">
+<dt id="scenario.Scenario.settings_format">
+<tt class="descname">settings_format</tt><em class="property"> = [{'desc': 'Name of the scenario', 'type': 'string', 'key': 'name', 'title': 'Name'}, {'desc': 'Description of the scenario', 'type': 'string_long', 'key': 'description', 'title': 'Description'}]</em><a class="headerlink" href="#scenario.Scenario.settings_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.get_block">
+<tt class="descname">get_block</tt><big>(</big><em>searched_id</em><big>)</big><a class="headerlink" href="#scenario.Scenario.get_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the block whose id is the searched_id. 
+If this id is not found, it returns False.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.get_link">
+<tt class="descname">get_link</tt><big>(</big><em>searched_id</em><big>)</big><a class="headerlink" href="#scenario.Scenario.get_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the link whose id is the searched_id. 
+If this id is not found, it returns False.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.get_node">
+<tt class="descname">get_node</tt><big>(</big><em>searched_id</em><big>)</big><a class="headerlink" href="#scenario.Scenario.get_node" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(Internal)</em> Returns the node whose id is 
+the searched_id. If this id is not found, it 
+returns False.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.add_action">
+<tt class="descname">add_action</tt><big>(</big><em>action_id</em><big>)</big><a class="headerlink" href="#scenario.Scenario.add_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.add_info">
+<tt class="descname">add_info</tt><big>(</big><em>info_id</em><big>)</big><a class="headerlink" href="#scenario.Scenario.add_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.add_block">
+<tt class="descname">add_block</tt><big>(</big><em>block_model_id</em>, <em>settings</em>, <em>block_id=None</em><big>)</big><a class="headerlink" href="#scenario.Scenario.add_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the block given as argument to the scenario 
+and returns its ID within the scenario.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.add_link">
+<tt class="descname">add_link</tt><big>(</big><em>src_node_id</em>, <em>dst_node_id</em>, <em>link_id=None</em><big>)</big><a class="headerlink" href="#scenario.Scenario.add_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a link from the source port whose id has been given as first argumment to the destination port whose id has been given as second argument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.remove_block">
+<tt class="descname">remove_block</tt><big>(</big><em>block_id</em><big>)</big><a class="headerlink" href="#scenario.Scenario.remove_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the element (block or link) whose ID has been specified from
+the relevant list of this Scenario and returns the removed element.
+If the ID is not found, the method returns False.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.remove_link">
+<tt class="descname">remove_link</tt><big>(</big><em>link_id</em><big>)</big><a class="headerlink" href="#scenario.Scenario.remove_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the link whose ID has been specified from
+the list of links of this Scenario and returns the Link.
+If the ID is not found, the method returns False.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.activate">
+<tt class="descname">activate</tt><big>(</big><big>)</big><a class="headerlink" href="#scenario.Scenario.activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activates this scenario, i.e. the links between ports
+of blocks become active: they are translated into 
+observer-observed relationships.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Scenario.deactivate">
+<tt class="descname">deactivate</tt><big>(</big><big>)</big><a class="headerlink" href="#scenario.Scenario.deactivate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivates this scenario, i. e. deletes all the 
+observer-observed relationships previously set.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="scenario.Block">
+<em class="property">class </em><tt class="descclassname">scenario.</tt><tt class="descname">Block</tt><big>(</big><em>block_id</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#scenario.Block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generic_models.html#generic_models.SettableObject" title="generic_models.SettableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.SettableObject</span></tt></a></p>
+<p>The Block class defines the minimum interface that any Block should implement.</p>
+<p>The purpose of the blocks are highlighted in the <a class="reference internal" href="#scenario.Scenario" title="scenario.Scenario"><tt class="xref py py-class docutils literal"><span class="pre">scenario.Scenario</span></tt></a> class documentation.</p>
+<dl class="attribute">
+<dt id="scenario.Block.settings_format">
+<tt class="descname">settings_format</tt><em class="property"> = [{'disabled': True, 'desc': 'Name of the block', 'type': 'string', 'key': 'name', 'title': 'Name'}]</em><a class="headerlink" href="#scenario.Block.settings_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="scenario.Block.add_nodes">
+<tt class="descname">add_nodes</tt><big>(</big><em>*args</em><big>)</big><a class="headerlink" href="#scenario.Block.add_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the nodes given as argument to the Block. Note that this function accepts as many arguments as you want, as long as they are all Nodes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Block.process">
+<tt class="descname">process</tt><big>(</big><em>changed_input</em><big>)</big><a class="headerlink" href="#scenario.Block.process" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(abstract method)</em> This is the method that implements the logic of a block, i.e. that computes the output values of the node according to its inputs. It is triggered every time any of the block&#8217;s inputs changes: the input which triggered the change is given as argument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Block.before_remove">
+<tt class="descname">before_remove</tt><big>(</big><big>)</big><a class="headerlink" href="#scenario.Block.before_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(abstract method)</em> Method used before a block is removed from the Scenario. Most of the time, this method will be empty. Sometimes, the block may need to delete other objects from Majordom before being removed. For instance, the <tt class="xref py py-class docutils literal"><span class="pre">base_blocks.InfoBlock</span></tt> has to delete its corresponding information before being removed from its scenario.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="scenario.Link">
+<em class="property">class </em><tt class="descclassname">scenario.</tt><tt class="descname">Link</tt><big>(</big><em>scenario</em>, <em>src_node</em>, <em>dst_node</em>, <em>link_id</em><big>)</big><a class="headerlink" href="#scenario.Link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generic_models.html#generic_models.IDableObject" title="generic_models.IDableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.IDableObject</span></tt></a></p>
+<p>The Links are used to connect nodes within a scenario. Their exact purpose are highlighted in the <a class="reference internal" href="#scenario.Scenario" title="scenario.Scenario"><tt class="xref py py-class docutils literal"><span class="pre">scenario.Scenario</span></tt></a> class documentation.</p>
+<dl class="method">
+<dt id="scenario.Link.activate">
+<tt class="descname">activate</tt><big>(</big><big>)</big><a class="headerlink" href="#scenario.Link.activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activates the link, i.e. initializes the observer-pattern relationship between the source and the destination nodes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Link.deactivate">
+<tt class="descname">deactivate</tt><big>(</big><big>)</big><a class="headerlink" href="#scenario.Link.deactivate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivates the link, i.e. removes the observer-pattern relationship between the source and the destination nodes.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="scenario.Node">
+<em class="property">class </em><tt class="descclassname">scenario.</tt><tt class="descname">Node</tt><big>(</big><em>block</em>, <em>node_id</em>, <em>name</em>, <em>value_type</em><big>)</big><a class="headerlink" href="#scenario.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generic_models.html#generic_models.IDableObject" title="generic_models.IDableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.IDableObject</span></tt></a></p>
+<p><em>(abstract class)</em> This is the base class for any Node subclass. It implements the minimum interface that any Node subclass should implement.</p>
+<dl class="attribute">
+<dt id="scenario.Node.multiplicity">
+<tt class="descname">multiplicity</tt><em class="property"> = 'simple'</em><a class="headerlink" href="#scenario.Node.multiplicity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="scenario.Node.get_value">
+<tt class="descname">get_value</tt><big>(</big><big>)</big><a class="headerlink" href="#scenario.Node.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the last value of the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.Node.get_values">
+<tt class="descname">get_values</tt><big>(</big><em>from_time=0</em>, <em>to_time=None</em><big>)</big><a class="headerlink" href="#scenario.Node.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the values of the node whose timestamps are located between the given arguments <tt class="xref py py-attr docutils literal"><span class="pre">from_time</span></tt> and <tt class="xref py py-attr docutils literal"><span class="pre">to_time</span></tt>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="scenario.OutputNode">
+<em class="property">class </em><tt class="descclassname">scenario.</tt><tt class="descname">OutputNode</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#scenario.OutputNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scenario.Node" title="scenario.Node"><tt class="xref py py-class docutils literal"><span class="pre">scenario.Node</span></tt></a></p>
+<p>Implementation of the Node interface for an output node.</p>
+<dl class="method">
+<dt id="scenario.OutputNode.add_next">
+<tt class="descname">add_next</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#scenario.OutputNode.add_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an observer to this node. That is the function called when the scenario is activated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.OutputNode.remove_next">
+<tt class="descname">remove_next</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#scenario.OutputNode.remove_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes an observer of this node. That is the function called when the scenario is deactivated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.OutputNode.add_value">
+<tt class="descname">add_value</tt><big>(</big><em>new_value</em><big>)</big><a class="headerlink" href="#scenario.OutputNode.add_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a value to the node and subsequently updates all the observers of the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.OutputNode.get_value">
+<tt class="descname">get_value</tt><big>(</big><big>)</big><a class="headerlink" href="#scenario.OutputNode.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the last value of the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.OutputNode.get_values">
+<tt class="descname">get_values</tt><big>(</big><em>from_time=0</em>, <em>to_time=None</em><big>)</big><a class="headerlink" href="#scenario.OutputNode.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the values of the node whose timestamps are located between the given arguments <tt class="xref py py-attr docutils literal"><span class="pre">from_time</span></tt> and <tt class="xref py py-attr docutils literal"><span class="pre">to_time</span></tt>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="scenario.InputNode">
+<em class="property">class </em><tt class="descclassname">scenario.</tt><tt class="descname">InputNode</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#scenario.InputNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scenario.Node" title="scenario.Node"><tt class="xref py py-class docutils literal"><span class="pre">scenario.Node</span></tt></a></p>
+<p><em>(abstract class)</em> Base class for any input node.</p>
+<dl class="method">
+<dt id="scenario.InputNode.update">
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#scenario.InputNode.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="scenario.SimpleInputNode">
+<em class="property">class </em><tt class="descclassname">scenario.</tt><tt class="descname">SimpleInputNode</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#scenario.SimpleInputNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scenario.InputNode" title="scenario.InputNode"><tt class="xref py py-class docutils literal"><span class="pre">scenario.InputNode</span></tt></a></p>
+<p>Implementation of the InputNode interface in the case of an input node which only accepts a single link. A single link has this kind of node as destination.</p>
+<dl class="method">
+<dt id="scenario.SimpleInputNode.add_previous">
+<tt class="descname">add_previous</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#scenario.SimpleInputNode.add_previous" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an observed node to this node. SingleInputNodes can only have a single observed node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.SimpleInputNode.remove_previous">
+<tt class="descname">remove_previous</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#scenario.SimpleInputNode.remove_previous" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes an observed node from this node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.SimpleInputNode.get_value">
+<tt class="descname">get_value</tt><big>(</big><big>)</big><a class="headerlink" href="#scenario.SimpleInputNode.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the last value of the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.SimpleInputNode.get_values">
+<tt class="descname">get_values</tt><big>(</big><em>from_time</em>, <em>to_time</em><big>)</big><a class="headerlink" href="#scenario.SimpleInputNode.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the values of the node whose timestamps are located between the given arguments <tt class="xref py py-attr docutils literal"><span class="pre">from_time</span></tt> and <tt class="xref py py-attr docutils literal"><span class="pre">to_time</span></tt>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="scenario.MultiInputNode">
+<em class="property">class </em><tt class="descclassname">scenario.</tt><tt class="descname">MultiInputNode</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#scenario.MultiInputNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scenario.InputNode" title="scenario.InputNode"><tt class="xref py py-class docutils literal"><span class="pre">scenario.InputNode</span></tt></a></p>
+<p>Implementation of the InputNode interface in the case of an input node which accepts several links. Several links may have this node as destination node. It may be used for blocks such as &#8216;Logical And&#8217;: you have no reason to limit the number of values of which you compute the logical and.</p>
+<dl class="attribute">
+<dt id="scenario.MultiInputNode.multiplicity">
+<tt class="descname">multiplicity</tt><em class="property"> = 'multiple'</em><a class="headerlink" href="#scenario.MultiInputNode.multiplicity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="scenario.MultiInputNode.add_previous">
+<tt class="descname">add_previous</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#scenario.MultiInputNode.add_previous" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an observed node to this node. MultiInputNodes can have several observed nodes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.MultiInputNode.remove_previous">
+<tt class="descname">remove_previous</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#scenario.MultiInputNode.remove_previous" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes an observed node from this node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.MultiInputNode.get_value">
+<tt class="descname">get_value</tt><big>(</big><big>)</big><a class="headerlink" href="#scenario.MultiInputNode.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the last value of the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scenario.MultiInputNode.get_values">
+<tt class="descname">get_values</tt><big>(</big><em>from_time</em>, <em>to_time</em><big>)</big><a class="headerlink" href="#scenario.MultiInputNode.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the values of the node whose timestamps are located between the given arguments <tt class="xref py py-attr docutils literal"><span class="pre">from_time</span></tt> and <tt class="xref py py-attr docutils literal"><span class="pre">to_time</span></tt>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">scenario</span></tt></a><ul>
+<li><a class="reference internal" href="#module-scenario">API</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="models.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">models</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../plugins_api.html"
+                        title="next chapter">Plugins API</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/scenario.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../plugins_api.html" title="Plugins API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="models.html" title="models"
+             >previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../api_reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Victor Creste, Raphaël Gautier and Valérian Justine.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

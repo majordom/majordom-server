@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>First-steps guide &mdash; Majordom 0.0.9 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/icone.ico"/>
+    <link rel="top" title="Majordom 0.0.9 documentation" href="index.html" />
+    <link rel="next" title="API Reference" href="api_reference.html" />
+    <link rel="prev" title="The Project" href="the_project.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api_reference.html" title="API Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="the_project.html" title="The Project"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Majordom 0.0.9 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="first-steps-guide">
+<h1>First-steps guide<a class="headerlink" href="#first-steps-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="launching-the-majordom-server">
+<h2>Launching the Majordom server<a class="headerlink" href="#launching-the-majordom-server" title="Permalink to this headline">¶</a></h2>
+<p>Make sure that you fulfill the <a class="reference internal" href="the_project.html#requirements"><em>Requirements</em></a> and that you have followed the <a class="reference internal" href="the_project.html#installation"><em>Installation</em></a> steps.</p>
+</div>
+<div class="section" id="launching-the-majordom-app-for-the-first-time">
+<h2>Launching the Majordom app for the first time<a class="headerlink" href="#launching-the-majordom-app-for-the-first-time" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="login-to-your-server">
+<h3>Login to your server<a class="headerlink" href="#login-to-your-server" title="Permalink to this headline">¶</a></h3>
+<p>When you launch the app, you directly arrive on a login screen.</p>
+<img alt="_images/login_screen.png" class="align-center" src="_images/login_screen.png" />
+<p>For the moment, user handling is not supported on Majordom: the <em>Username</em> and <em>Password</em> fields are therefore useless. The only fields which matters at the moment is the <em>Server</em> field. If you have launched the server without changing the base settings, you should use <tt class="docutils literal"><span class="pre">http://127.0.0.1:8080/</span></tt>.</p>
+<p>Once it is done, touch or click on <em>Connect</em> in the top-left corner of the screen.</p>
+</div>
+<div class="section" id="the-home-screen">
+<h3>The Home Screen<a class="headerlink" href="#the-home-screen" title="Permalink to this headline">¶</a></h3>
+<p>If everything went smoothly, you should now be seeing your Home screen.</p>
+<img alt="_images/home_screen.png" class="align-center" src="_images/home_screen.png" />
+<p>The Home screen is the place you have direct access to all the devices connected to Majordom. If the device is an actuator, you can also interact with it and manually control it. For the moment, your home screen should obviously be empty since you have not added any device yet.</p>
+</div>
+<div class="section" id="access-majordom-settings">
+<h3>Access Majordom settings<a class="headerlink" href="#access-majordom-settings" title="Permalink to this headline">¶</a></h3>
+<p>The first thing you want to do now is to check the basic configuration of Majordom. For instance, you may want to specify the COM port to which a modem is connected. Otherwise, you would not be able to receive messages from it.</p>
+<p>To access the settings, click on the three dots in the top-right corner of the screen and then click on <em>Settings</em>.</p>
+<img alt="_images/access_settings.png" class="align-center" src="_images/access_settings.png" />
+<p>A settings screen appears.</p>
+<img alt="_images/settings_screen.png" class="align-center" src="_images/settings_screen.png" />
+<dl class="docutils">
+<dt>In this example, we see two categories of settings:</dt>
+<dd><ul class="first last simple">
+<li><em>Nexa</em> are the settings of the Nexa protocol. The only setting available for the Nexa protocol is the modem used to receive radio messages.</li>
+<li><em>Arduino Radio</em> are the settings of the Arduino Radio driver. The Arduino radio driver handles the communication with the <a class="reference internal" href="arduino.html"><em>Arduino Radio custom radio 433MHz modem</em></a>. You must therefore specify the COM port used to communicate with the Arduino.</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="managing-devices">
+<h2>Managing devices<a class="headerlink" href="#managing-devices" title="Permalink to this headline">¶</a></h2>
+<p>Once Majordom is correctly set, you can start adding devices to the system.</p>
+<div class="section" id="add-a-device">
+<h3>Add a device<a class="headerlink" href="#add-a-device" title="Permalink to this headline">¶</a></h3>
+<p>To add a device, first click on <em>Add a new device</em> in the top menu of the Home screen. A popup should appear.</p>
+<img alt="_images/add_device_list.png" class="align-center" src="_images/add_device_list.png" />
+<p>Select the device you want to add. There are two kinds of devices: those which are automatically added to the system and those which require synchronization in order to connect to Majordom.</p>
+</div>
+<div class="section" id="add-an-automatically-detected-device">
+<h3>Add an automatically detected device<a class="headerlink" href="#add-an-automatically-detected-device" title="Permalink to this headline">¶</a></h3>
+<p>We take the example of the <em>Nexa 3 Button Remote</em>. When you choose list in the devices list, a new screen should appear.</p>
+<img alt="_images/add_device_auto.png" class="align-center" src="_images/add_device_auto.png" />
+<p>In the upper part of the popup, a text describes the way you should act so that your device is added to the system. For instance, here, you have to press each button of the remote in order to add it to Majordom. Once you have done it, if everything went smoothly, another screen should be appearing automatically.</p>
+<img alt="_images/add_device_settings.png" class="align-center" src="_images/add_device_settings.png" />
+<p>This is the settings screen of the device. That is where you can,among others, choose the name under which your device will appear on the Home Screen.</p>
+<p>One you are finished with the device settings, simply click <em>Next</em>: you are brought back to the Home screen and your new device should have appeared.</p>
+<img alt="_images/home_screen_after_add.png" class="align-center" src="_images/home_screen_after_add.png" />
+</div>
+<div class="section" id="add-a-device-needing-synchronization">
+<h3>Add a device needing synchronization<a class="headerlink" href="#add-a-device-needing-synchronization" title="Permalink to this headline">¶</a></h3>
+<p>In this case, when you choose such a device, for instance a <em>Nexa device</em>, you are first brought to the device settings screen.</p>
+<img alt="_images/add_device_settings.png" class="align-center" src="_images/add_device_settings.png" />
+<p>Then, when you are finished, click <em>Next</em>. A synchronization screen will appear.</p>
+<img alt="_images/add_device_sync.png" class="align-center" src="_images/add_device_sync.png" />
+<p>Once again, you must follow the instructions written in the upper part of the popup before clicking <em>Next</em>. Clicking <em>Next</em> will bring you to a synchronization check screen.</p>
+<img alt="_images/add_device_synccheck.png" class="align-center" src="_images/add_device_synccheck.png" />
+<p>On this screen, you can see your newly-added device as it will be displayed on the Home screen. You can check its working: on the screen above, the user can click on the switch to make sure that the device is actually working.</p>
+<p>If it does not work properly, click <em>Previous</em> and start again the synchronization.</p>
+<p>Otherwise, go back to the Home screen by clicking <em>Next</em>.</p>
+</div>
+</div>
+<div class="section" id="handling-scenarios">
+<h2>Handling scenarios<a class="headerlink" href="#handling-scenarios" title="Permalink to this headline">¶</a></h2>
+<p>Now that you are able to add devices to Majordom, it is timeto get to the most interesting parts: the scenarios.</p>
+<p>The scenarios are a powerful tool to graphically and very easily program the behaviour of your Majordom server.</p>
+<p>They make use of informations and actions that were automatically added to Majordom when you added a new Device. For instance, a <em>Nexa Device</em> comes with one information, its state (<em>on</em> or <em>off</em>) and four actions: switch on, switch off, sync and unsync.</p>
+<p>They also make use of <em>processing blocks</em>. Processing blocks are blocks which have inputs on the one side and outputs on the other side. When one of their inputs is updated, they process and consequently update their outputs.</p>
+<div class="section" id="create-a-new-scenario">
+<h3>Create a new Scenario<a class="headerlink" href="#create-a-new-scenario" title="Permalink to this headline">¶</a></h3>
+<p>In order to add a new scenario to Majordom, first access the <em>Manage scenarios</em> screen by clicking on the three dots at the top-right corner of the Home screen and then click <em>Manage scenarios</em>. The following screen should appear.</p>
+<img alt="_images/manage_scenarios.png" class="align-center" src="_images/manage_scenarios.png" />
+<p>It is an empty list since you have created no scenario yet. To add a new scenario, click on <em>Add a new scenario</em> in the menu at the top of the screen. A simple screen should appear.</p>
+<img alt="_images/new_scenario.png" class="align-center" src="_images/new_scenario.png" />
+<p>You can enter a name and a short text describing the purpose of the scenario. Once you are done, click on <em>Continue</em> at the top-right corner of the screen. You access the scenario editor screen.</p>
+<img alt="_images/scenario_editor_empty.png" class="align-center" src="_images/scenario_editor_empty.png" />
+</div>
+<div class="section" id="edit-a-scenario">
+<h3>Edit a scenario<a class="headerlink" href="#edit-a-scenario" title="Permalink to this headline">¶</a></h3>
+<p>Once you are on the scenario edit screen, you can add processing blocks, actions or infos to your scenario and then interact with them.</p>
+<div class="section" id="add-a-processing-block">
+<h4>Add a processing block<a class="headerlink" href="#add-a-processing-block" title="Permalink to this headline">¶</a></h4>
+<p>In order to add a processing block, click on <em>Add a block</em> in the menu at the top of the screen. A popup with the list of available blocks should appear.</p>
+<img alt="_images/scenario_editing_add_block.png" class="align-center" src="_images/scenario_editing_add_block.png" />
+<p>Click on the block you want to add to the scenario. It should appear in the scenario screen in the bottom-left corner.</p>
+<img alt="_images/scenario_editor_afteraddblock.png" class="align-center" src="_images/scenario_editor_afteraddblock.png" />
+</div>
+<div class="section" id="add-an-action">
+<h4>Add an action<a class="headerlink" href="#add-an-action" title="Permalink to this headline">¶</a></h4>
+<p>In order to add an action, follow exactly the same steps as for adding a processing block, except that you click on <em>Add an action</em> in the menu at the top of the scenario editor.</p>
+</div>
+<div class="section" id="add-an-info">
+<h4>Add an info<a class="headerlink" href="#add-an-info" title="Permalink to this headline">¶</a></h4>
+<p>In order to add an info, follow exactly the same steps as for adding a processing block, except that you click on <em>Add an info</em> in the menu at the top of the scenario editor.</p>
+</div>
+<div class="section" id="draw-a-link">
+<h4>Draw a link<a class="headerlink" href="#draw-a-link" title="Permalink to this headline">¶</a></h4>
+<p>Links are drawn between the output node of a block and the input node of another block, if the two blocks are compatible, i.e. mostly if they are the same type (boolean, numeric...).</p>
+<p>In order to draw a link between nodes, first click a node. You will see that non-compatible nodes turn grey: they are deactivated and you can therefore not select them as destination node.</p>
+<img alt="_images/scenario_editor_firstnode.png" class="align-center" src="_images/scenario_editor_firstnode.png" />
+<p>If you changed your mind and want to stop creating a node, just click on the same node again.</p>
+<p>Otherwise, click on a second node and a link between the two nodes should appear.</p>
+<img alt="_images/scenario_editor_link.png" class="align-center" src="_images/scenario_editor_link.png" />
+</div>
+<div class="section" id="interact-with-blocks-and-links">
+<h4>Interact with blocks and links<a class="headerlink" href="#interact-with-blocks-and-links" title="Permalink to this headline">¶</a></h4>
+<p>Within the scenario editor, you can move blocks at your liking: just touch them and move your finger.</p>
+<p>You can also navigate within the editor: touch a place without block nor link and move your finger.</p>
+<p>You can zoom in and out with two fingers, in order to have a more general view of your scenario.</p>
+<p>To remove a block, double tap on it. A bubble menu should appear. Click on <em>Remove</em> if you want to remove the block from the scenario.</p>
+<img alt="_images/scenario_editor_blockbubble.png" class="align-center" src="_images/scenario_editor_blockbubble.png" />
+</div>
+<div class="section" id="access-the-settings-of-a-block">
+<h4>Access the settings of a block<a class="headerlink" href="#access-the-settings-of-a-block" title="Permalink to this headline">¶</a></h4>
+<p>Specific blocks, such as the <em>Info Block</em> can be set. In order to set such a block, double click on it. A menu bubble should appear, having this time a <em>Settings</em> button.</p>
+<img alt="_images/scenario_editor_settingsbubble.png" class="align-center" src="_images/scenario_editor_settingsbubble.png" />
+<p>Click on the <em>Settings</em> button and a popup with a settings screen should appear.</p>
+<img alt="_images/scenario_editor_blocksettings.png" class="align-center" src="_images/scenario_editor_blocksettings.png" />
+</div>
+<div class="section" id="activate-the-scenario">
+<h4>Activate the scenario<a class="headerlink" href="#activate-the-scenario" title="Permalink to this headline">¶</a></h4>
+<p>In order to activate the scenario, i.e. that Majordom behaves as you programmed it, you must activate the scenario. To do so, click on the three dots in the top-right corner of the screen and then click on <em>Activate</em>.</p>
+<img alt="_images/scenario_editor_activate.png" class="align-center" src="_images/scenario_editor_activate.png" />
+<p>Now, enjoy your autonomous home!</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">First-steps guide</a><ul>
+<li><a class="reference internal" href="#launching-the-majordom-server">Launching the Majordom server</a></li>
+<li><a class="reference internal" href="#launching-the-majordom-app-for-the-first-time">Launching the Majordom app for the first time</a><ul>
+<li><a class="reference internal" href="#login-to-your-server">Login to your server</a></li>
+<li><a class="reference internal" href="#the-home-screen">The Home Screen</a></li>
+<li><a class="reference internal" href="#access-majordom-settings">Access Majordom settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#managing-devices">Managing devices</a><ul>
+<li><a class="reference internal" href="#add-a-device">Add a device</a></li>
+<li><a class="reference internal" href="#add-an-automatically-detected-device">Add an automatically detected device</a></li>
+<li><a class="reference internal" href="#add-a-device-needing-synchronization">Add a device needing synchronization</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#handling-scenarios">Handling scenarios</a><ul>
+<li><a class="reference internal" href="#create-a-new-scenario">Create a new Scenario</a></li>
+<li><a class="reference internal" href="#edit-a-scenario">Edit a scenario</a><ul>
+<li><a class="reference internal" href="#add-a-processing-block">Add a processing block</a></li>
+<li><a class="reference internal" href="#add-an-action">Add an action</a></li>
+<li><a class="reference internal" href="#add-an-info">Add an info</a></li>
+<li><a class="reference internal" href="#draw-a-link">Draw a link</a></li>
+<li><a class="reference internal" href="#interact-with-blocks-and-links">Interact with blocks and links</a></li>
+<li><a class="reference internal" href="#access-the-settings-of-a-block">Access the settings of a block</a></li>
+<li><a class="reference internal" href="#activate-the-scenario">Activate the scenario</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="the_project.html"
+                        title="previous chapter">The Project</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api_reference.html"
+                        title="next chapter">API Reference</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/first_steps.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api_reference.html" title="API Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="the_project.html" title="The Project"
+             >previous</a> |</li>
+        <li><a href="index.html">Majordom 0.0.9 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Victor Creste, Raphaël Gautier and Valérian Justine.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

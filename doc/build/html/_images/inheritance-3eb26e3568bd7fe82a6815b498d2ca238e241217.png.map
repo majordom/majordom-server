@@ -1,0 +1,7 @@
+<map id="inheritancea94c14b0d9" name="inheritancea94c14b0d9">
+<area shape="rect" id="node1" href="../api/generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through" alt="" coords="20,5,187,27"/>
+<area shape="rect" id="node2" href="../api/generic_models.html#generic_models.SettableObject" title="generic_models.SettableObject" alt="" coords="15,69,193,91"/>
+<area shape="rect" id="node3" href="../api/models.html#models.Driver" title="In the model used to design the box, a class deriving from " alt="" coords="60,133,148,156"/>
+<area shape="rect" id="node4" href="#plugins.arduino_radio.ArduinoRadio" title="Class implementing the interface between the computer" alt="" coords="5,198,203,220"/>
+<area shape="rect" id="node6" title="A class that represents a thread of control." alt="" coords="438,5,542,27"/>
+</map>

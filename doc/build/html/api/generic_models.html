@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>generic_models &mdash; Majordom 0.0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/icone.ico"/>
+    <link rel="top" title="Majordom 0.0.9 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api_reference.html" />
+    <link rel="next" title="models" href="models.html" />
+    <link rel="prev" title="kernel" href="kernel.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="models.html" title="models"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="kernel.html" title="kernel"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../api_reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="generic-models">
+<h1><a class="reference internal" href="#module-generic_models" title="generic_models"><tt class="xref py py-mod docutils literal"><span class="pre">generic_models</span></tt></a><a class="headerlink" href="#generic-models" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="../_images/inheritance-238aabf425c6373d26279ed7c34c46ed27859e51.png" alt="Inheritance diagram of generic_models" usemap="#inheritance9768444a4c" class="inheritance"/>
+<map id="inheritance9768444a4c" name="inheritance9768444a4c">
+<area shape="rect" id="node1" href="#generic_models.AttributeNotSet" title="Raised when an object tries to use an object whose an attribute essential to its working has not yet been " alt="" coords="5,5,212,31"/>
+<area shape="rect" id="node2" href="#generic_models.IDableObject" title="Class of an object which is accessible through a unique ID. The ID is obtained according various processes wich depend on the class of the object. Though, in all cases, they are given so that they are unique." alt="" coords="236,5,427,31"/>
+<area shape="rect" id="node3" href="#generic_models.SettableObject" title="Class used to normalize the access to an object&#39;s settings." alt="" coords="230,79,433,104"/>
+</map>
+</p>
+<div class="section" id="module-generic_models">
+<span id="api"></span><h2>API<a class="headerlink" href="#module-generic_models" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="generic_models.AttributeNotSet">
+<em class="property">exception </em><tt class="descclassname">generic_models.</tt><tt class="descname">AttributeNotSet</tt><a class="headerlink" href="#generic_models.AttributeNotSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+<p>Raised when an object tries to use an object whose an attribute essential to its working has not yet been 
+set. E.g. when you try sending a message with a modem whose COM port has not been set.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="generic_models.IDableObject">
+<em class="property">class </em><tt class="descclassname">generic_models.</tt><tt class="descname">IDableObject</tt><a class="headerlink" href="#generic_models.IDableObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Class of an object which is accessible through a unique ID. The ID is obtained according various processes wich depend on the class of the object. Though, in all cases, they are given so that they are unique.</p>
+<dl class="method">
+<dt id="generic_models.IDableObject.get_id">
+<tt class="descname">get_id</tt><big>(</big><big>)</big><a class="headerlink" href="#generic_models.IDableObject.get_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="generic_models.SettableObject">
+<em class="property">class </em><tt class="descclassname">generic_models.</tt><tt class="descname">SettableObject</tt><big>(</big><em>settings=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#generic_models.SettableObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#generic_models.IDableObject" title="generic_models.IDableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.IDableObject</span></tt></a></p>
+<p>Class used to normalize the access to an object&#8217;s settings.</p>
+<p>Within Majordom, many objects may need to be set by the user: protocols, devices or even blocks. But all the blocks or all the devices will <strong>not</strong> have the same settings: for instance, you can specify the value of a &#8216;Constant Block&#8217; but a &#8216;Multiply&#8217; Block will have no settings. Different devices, from different protocols, won&#8217;t have the same settings either.</p>
+<p>Yet, all these objects have to be settable. To do so, we introduced two attributes: <a class="reference internal" href="#generic_models.SettableObject.settings_format" title="generic_models.SettableObject.settings_format"><tt class="xref py py-attr docutils literal"><span class="pre">settings_format</span></tt></a> and <tt class="xref py py-attr docutils literal"><span class="pre">settings</span></tt>.</p>
+<p>The first one, <a class="reference internal" href="#generic_models.SettableObject.settings_format" title="generic_models.SettableObject.settings_format"><tt class="xref py py-attr docutils literal"><span class="pre">settings_format</span></tt></a>, is a representation of the available settings of the given object. It can be a class attribute: every instance of a class should normally have the same settings format. The <a class="reference internal" href="#generic_models.SettableObject.settings_format" title="generic_models.SettableObject.settings_format"><tt class="xref py py-attr docutils literal"><span class="pre">settings_format</span></tt></a> are a python list of python dictionaries.</p>
+<p>Here is an example of format dictionary:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;key&#39;</span><span class="p">:</span> <span class="s">&#39;name&#39;</span><span class="p">,</span>
+ <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="s">&#39;string&#39;</span><span class="p">,</span>
+ <span class="s">&#39;disabled&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+ <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Name of the device&#39;</span><span class="p">,</span>
+ <span class="s">&#39;desc&#39;</span><span class="p">:</span> <span class="s">&#39;The display name of this device&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>the &#8216;key&#8217; is a unique identifier for this particular settings</li>
+<li>the &#8216;type&#8217; can be &#8216;string&#8217;, &#8216;string_long&#8217;, &#8216;num&#8217;, &#8216;num_int&#8217;, &#8216;bool&#8217; or &#8216;options&#8217;. In the case of &#8216;options&#8217;, you have to add another &#8216;options&#8217; field which will contain the list of all available options</li>
+<li>the &#8216;disabled&#8217; field tells whether or not the user can modify the settings (it is optional and defaults to True)</li>
+<li>the &#8216;name&#8217; field is the name of the given settings</li>
+<li>the &#8216;desc&#8217; field is a field describing what the setting is used for</li>
+</ul>
+<p>The second one, <tt class="xref py py-attr docutils literal"><span class="pre">settings</span></tt>, is a python dictionary containing the settings themselves. The key in the dictionary is the corresponding key in the settings format.</p>
+<p>These two attributes are in fact a way to replace some instance attributes: the elements in <tt class="xref py py-attr docutils literal"><span class="pre">settings</span></tt> would normally have been stored in the instance attributes. It is the need to be able to dynamically &#8216;discover&#8217; one object&#8217;s available <tt class="xref py py-attr docutils literal"><span class="pre">settings</span></tt> which led us to this choice: this way, having exact knowledge of the class structures (in particular of its attributes) is not necessary to interact with it.</p>
+<dl class="attribute">
+<dt id="generic_models.SettableObject.settings_format">
+<tt class="descname">settings_format</tt><em class="property"> = []</em><a class="headerlink" href="#generic_models.SettableObject.settings_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>The settings_format dictionary described above.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="generic_models.SettableObject.set">
+<tt class="descname">set</tt><big>(</big><em>settings</em><big>)</big><a class="headerlink" href="#generic_models.SettableObject.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the SettableObject according to the settings given as argument. The setting dict given as argument must follow the format of the class attribute <a class="reference internal" href="#generic_models.SettableObject.settings_format" title="generic_models.SettableObject.settings_format"><tt class="xref py py-attr docutils literal"><span class="pre">settings_format</span></tt></a>.</p>
+<p>If the <cite>settings</cite> given are not valid, they are ignored and 
+the method returns a dictionary containing the faulty keys.
+For instance, settings may not be valid if you try giving a 
+dictionary having a key which was not specified in <a class="reference internal" href="#generic_models.SettableObject.settings_format" title="generic_models.SettableObject.settings_format"><tt class="xref py py-attr docutils literal"><span class="pre">settings_format</span></tt></a> or if the value of a setting
+does not tally with the type requested in <a class="reference internal" href="#generic_models.SettableObject.settings_format" title="generic_models.SettableObject.settings_format"><tt class="xref py py-attr docutils literal"><span class="pre">settings_format</span></tt></a>.</p>
+<p>The <cite>settings</cite> dictionary given as argument may not contain every key
+specified in the format dictionary. In this case, all the specified 
+settings will me modified (on the condition they are valid) and the 
+others will be left unchanged.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>settings</strong> (<tt class="xref py py-class docutils literal"><span class="pre">python</span> <span class="pre">dict</span></tt>) &#8211; The python dictionary containing the settings to apply.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the settings were correctly applied. A python dictionary containing the faulty settings otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref py py-class docutils literal"><span class="pre">boolean</span></tt> or <tt class="xref py py-class docutils literal"><span class="pre">python</span> <span class="pre">dict</span></tt></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">generic_models</span></tt></a><ul>
+<li><a class="reference internal" href="#module-generic_models">API</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="kernel.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">kernel</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="models.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">models</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/generic_models.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="models.html" title="models"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="kernel.html" title="kernel"
+             >previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../api_reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Victor Creste, Raphaël Gautier and Valérian Justine.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

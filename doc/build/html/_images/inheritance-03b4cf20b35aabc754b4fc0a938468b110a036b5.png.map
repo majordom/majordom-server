@@ -1,0 +1,13 @@
+<map id="inheritance613fd94b9f" name="inheritance613fd94b9f">
+<area shape="rect" id="node1" href="generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through a unique ID. The ID is obtained according various processes wich depend on the class of the object. Though, in all cases, they are given so that they are unique." alt="" coords="455,5,634,29"/>
+<area shape="rect" id="node2" href="generic_models.html#generic_models.SettableObject" title="Class used to normalize the access to an object&#39;s settings." alt="" coords="269,74,459,97"/>
+<area shape="rect" id="node5" href="#models.BlockModel" title="Similarly to the DeviceModel, the BlockModel is used to show the users the available blocks that he can use is his scenarios. Once again, they represent an abstraction layer between the real block and the user." alt="" coords="481,74,608,97"/>
+<area shape="rect" id="node7" href="#models.DeviceModel" title="The DeviceModel class is particularly important in Majordom: it is the way we chose to show the user what devices he was able to add to his home automation system. Moreover, the device models are highly important in the process of adding the device to the system: it is the device models that are called when you want to add a device to Majordom. To sum up, they offer the necessary abstraction layer to the user so that he can know what devices he can add to his system and how to do it." alt="" coords="631,74,763,97"/>
+<area shape="rect" id="node4" href="scenario.html#scenario.Block" title="scenario.Block" alt="" coords="70,142,171,166"/>
+<area shape="rect" id="node6" href="#models.Device" title="The class :class:`models.Device` defines the minimal public " alt="" coords="194,142,294,166"/>
+<area shape="rect" id="node8" href="#models.Driver" title="In the model used to design the box, a class deriving from " alt="" coords="317,142,411,166"/>
+<area shape="rect" id="node10" href="#models.Interface" title="The class :class:`models.Interface` defines the minimal public " alt="" coords="434,142,543,166"/>
+<area shape="rect" id="node11" href="#models.Protocol" title="In the model used to design the box, a class deriving from " alt="" coords="566,142,675,166"/>
+<area shape="rect" id="node3" href="#models.Action" title="Class used to wrap an action made available by a device." alt="" coords="5,211,104,235"/>
+<area shape="rect" id="node9" href="#models.Information" title="Class used to wrap an information made available by a device." alt="" coords="127,211,249,235"/>
+</map>

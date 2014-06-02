@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>models &mdash; Majordom 0.0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/icone.ico"/>
+    <link rel="top" title="Majordom 0.0.9 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api_reference.html" />
+    <link rel="next" title="scenario" href="scenario.html" />
+    <link rel="prev" title="generic_models" href="generic_models.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scenario.html" title="scenario"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="generic_models.html" title="generic_models"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../api_reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="models">
+<h1><a class="reference internal" href="#module-models" title="models"><tt class="xref py py-mod docutils literal"><span class="pre">models</span></tt></a><a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="../_images/inheritance-03b4cf20b35aabc754b4fc0a938468b110a036b5.png" alt="Inheritance diagram of models" usemap="#inheritance613fd94b9f" class="inheritance"/>
+<map id="inheritance613fd94b9f" name="inheritance613fd94b9f">
+<area shape="rect" id="node1" href="generic_models.html#generic_models.IDableObject" title="Class of an object which is accessible through a unique ID. The ID is obtained according various processes wich depend on the class of the object. Though, in all cases, they are given so that they are unique." alt="" coords="455,5,634,29"/>
+<area shape="rect" id="node2" href="generic_models.html#generic_models.SettableObject" title="Class used to normalize the access to an object&#39;s settings." alt="" coords="269,74,459,97"/>
+<area shape="rect" id="node5" href="#models.BlockModel" title="Similarly to the DeviceModel, the BlockModel is used to show the users the available blocks that he can use is his scenarios. Once again, they represent an abstraction layer between the real block and the user." alt="" coords="481,74,608,97"/>
+<area shape="rect" id="node7" href="#models.DeviceModel" title="The DeviceModel class is particularly important in Majordom: it is the way we chose to show the user what devices he was able to add to his home automation system. Moreover, the device models are highly important in the process of adding the device to the system: it is the device models that are called when you want to add a device to Majordom. To sum up, they offer the necessary abstraction layer to the user so that he can know what devices he can add to his system and how to do it." alt="" coords="631,74,763,97"/>
+<area shape="rect" id="node4" href="scenario.html#scenario.Block" title="scenario.Block" alt="" coords="70,142,171,166"/>
+<area shape="rect" id="node6" href="#models.Device" title="The class :class:`models.Device` defines the minimal public " alt="" coords="194,142,294,166"/>
+<area shape="rect" id="node8" href="#models.Driver" title="In the model used to design the box, a class deriving from " alt="" coords="317,142,411,166"/>
+<area shape="rect" id="node10" href="#models.Interface" title="The class :class:`models.Interface` defines the minimal public " alt="" coords="434,142,543,166"/>
+<area shape="rect" id="node11" href="#models.Protocol" title="In the model used to design the box, a class deriving from " alt="" coords="566,142,675,166"/>
+<area shape="rect" id="node3" href="#models.Action" title="Class used to wrap an action made available by a device." alt="" coords="5,211,104,235"/>
+<area shape="rect" id="node9" href="#models.Information" title="Class used to wrap an information made available by a device." alt="" coords="127,211,249,235"/>
+</map>
+</p>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>In this python module, you will find the main models of the Majordom App, that is the base classes that are repeteadly used within the server app.</p>
+<span class="target" id="module-models"></span><dl class="class">
+<dt id="models.Protocol">
+<em class="property">class </em><tt class="descclassname">models.</tt><tt class="descname">Protocol</tt><a class="headerlink" href="#models.Protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generic_models.html#generic_models.SettableObject" title="generic_models.SettableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.SettableObject</span></tt></a></p>
+<p>In the model used to design the box, a class deriving from 
+<a class="reference internal" href="#models.Protocol" title="models.Protocol"><tt class="xref py py-class docutils literal"><span class="pre">models.Protocol</span></tt></a> implements all the methods that are 
+necessary to make the box compatible with a new home automation
+protocol. For instance, every protocol class should implement
+the function processing an incoming message from the associated
+modem.</p>
+<p>The class <a class="reference internal" href="#models.Protocol" title="models.Protocol"><tt class="xref py py-class docutils literal"><span class="pre">models.Protocol</span></tt></a> defines the minimal public 
+interface that any protocol class should implement, in order 
+to allow other entities to use it.</p>
+<p>It should <strong>not</strong> be directly instantiated.</p>
+<p>Any protocol plugin should derive from it. To see what the actual
+implementation of a protocol looks like, you may for instance refer
+to the classes <tt class="xref py py-class docutils literal"><span class="pre">protocols.nexa.Nexa</span></tt> and 
+<tt class="xref py py-class docutils literal"><span class="pre">protocols.oregon.Oregon</span></tt>.</p>
+<dl class="method">
+<dt id="models.Protocol.set">
+<tt class="descname">set</tt><big>(</big><em>settings</em><big>)</big><a class="headerlink" href="#models.Protocol.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides the same method of the :class`SettableObject` in order 
+to dynamically manage the &#8216;driver&#8217; field of the settings that is specific
+to Protocols.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.Protocol.add_device">
+<tt class="descname">add_device</tt><big>(</big><em>device_key</em>, <em>settings</em><big>)</big><a class="headerlink" href="#models.Protocol.add_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and adds to the system a new device whose <tt class="xref py py-const docutils literal"><span class="pre">device_code</span></tt> is
+the <tt class="xref py py-const docutils literal"><span class="pre">device_code</span></tt> given as argument. The <tt class="xref py py-const docutils literal"><span class="pre">device_key</span></tt> is known by 
+the associated Device Model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>device_code</strong> (<tt class="xref py py-class docutils literal"><span class="pre">string</span></tt>) &#8211; The device_key of the new device to create</li>
+<li><strong>settings</strong> (<tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt>) &#8211; The initial settings to apply to the newly instantiated Device.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><tt class="xref py py-const docutils literal"><span class="pre">True</span></tt> if everything went well, <tt class="xref py py-const docutils literal"><span class="pre">False</span></tt> if the device_code given does not exist or the python dictionary returned by <tt class="xref py py-func docutils literal"><span class="pre">models.Device.set()</span></tt> if something was wrong with the settings given.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="xref py py-class docutils literal"><span class="pre">bool</span></tt> or <tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.Protocol.get_devices">
+<tt class="descname">get_devices</tt><big>(</big><big>)</big><a class="headerlink" href="#models.Protocol.get_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of devices currently managed by this protocol.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a list of devices currently managed by the protocol</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><tt class="xref py py-class docutils literal"><span class="pre">list</span></tt> of <a class="reference internal" href="#models.Device" title="models.Device"><tt class="xref py py-class docutils literal"><span class="pre">models.Device</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.Protocol.process_message">
+<tt class="descname">process_message</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#models.Protocol.process_message" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(abstract method)</em> Processes a message sent by the modem to which the Protcol is attached,
+through its Driver. When it receives an incoming message, the Driver calls
+the method <a class="reference internal" href="#models.Protocol.process_message" title="models.Protocol.process_message"><tt class="xref py py-class docutils literal"><span class="pre">models.Protocol.process_message</span></tt></a> of every Protocol that
+has previously subscribed to it.</p>
+<p>The <tt class="xref py py-const docutils literal"><span class="pre">message</span></tt> given as argument has a format that is known by the Protocol.
+A Protocol cannot work with any modem: it has a compatibility list and knows 
+therefore the format of message it is going to receive from its modem&#8217;s Driver.</p>
+<p>It <strong>must</strong> be implemented in any derived class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.Driver">
+<em class="property">class </em><tt class="descclassname">models.</tt><tt class="descname">Driver</tt><a class="headerlink" href="#models.Driver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generic_models.html#generic_models.SettableObject" title="generic_models.SettableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.SettableObject</span></tt></a></p>
+<p>In the model used to design the box, a class deriving from 
+<a class="reference internal" href="#models.Driver" title="models.Driver"><tt class="xref py py-class docutils literal"><span class="pre">models.Driver</span></tt></a> implements the way the box communicates 
+with an external hardware part. Hardware parts may for instance 
+be radio modems, as it is the case with the 
+<a class="reference internal" href="../plugins/arduino_radio.html#plugins.arduino_radio.ArduinoRadio" title="plugins.arduino_radio.ArduinoRadio"><tt class="xref py py-class docutils literal"><span class="pre">plugins.arduino_radio.ArduinoRadio</span></tt></a> driver.</p>
+<p>In the case of the hardware being a modem, this class has then
+two main features to implement: the process of receiving a 
+message and the process of sending one.
+In the first case, the driver must implement the way it 
+communicates with hardware parts. For the example of the
+<a class="reference internal" href="../plugins/arduino_radio.html#plugins.arduino_radio.ArduinoRadio" title="plugins.arduino_radio.ArduinoRadio"><tt class="xref py py-class docutils literal"><span class="pre">plugins.arduino_radio.ArduinoRadio</span></tt></a>, the mini 
+communication protocol used is described in the <a class="reference internal" href="../arduino.html"><em>Arduino Radio custom radio 433MHz modem</em></a> section</p>
+<p>Then, once the message has been recovered from the hardware part,
+it must be transmitted to the protocols that use this 
+hardware as a communication medium in order to get the
+actual content of the message. This is implemented
+through a &#8216;subscription&#8217; process: protocols subscribe to 
+the driver they want to get their messages from when
+their associated driver is set.</p>
+<p>The class <a class="reference internal" href="#models.Driver" title="models.Driver"><tt class="xref py py-class docutils literal"><span class="pre">models.Driver</span></tt></a> defines the minimal public 
+interface that any driver class should implement, in order 
+to allow other entities to use it.</p>
+<p>It should <strong>not</strong> be directly instantiated.</p>
+<p>Any driver plugin should derive from it. To see what the actual
+implementation of a drivers looks like, you may for instance refer
+to the class <a class="reference internal" href="../plugins/arduino_radio.html#plugins.arduino_radio.ArduinoRadio" title="plugins.arduino_radio.ArduinoRadio"><tt class="xref py py-class docutils literal"><span class="pre">plugins.arduino_radio.ArduinoRadio</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="models.Interface">
+<em class="property">class </em><tt class="descclassname">models.</tt><tt class="descname">Interface</tt><big>(</big><em>settings=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#models.Interface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generic_models.html#generic_models.SettableObject" title="generic_models.SettableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.SettableObject</span></tt></a></p>
+<p>The class <a class="reference internal" href="#models.Interface" title="models.Interface"><tt class="xref py py-class docutils literal"><span class="pre">models.Interface</span></tt></a> defines the minimal public 
+interface that any interface class should implement, in order 
+to allow other entities to use it.</p>
+<p>It should <strong>not</strong> be directly instantiated.</p>
+<p>Any interface plugin should derive from it. To see what the actual
+implementation of a drivers looks like, you may for instance refer
+to the class <tt class="xref py py-class docutils literal"><span class="pre">plugins.http_inferface.HTTPInterface</span></tt>.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="models.Device">
+<em class="property">class </em><tt class="descclassname">models.</tt><tt class="descname">Device</tt><big>(</big><em>settings=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#models.Device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generic_models.html#generic_models.SettableObject" title="generic_models.SettableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.SettableObject</span></tt></a></p>
+<p>The class <a class="reference internal" href="#models.Device" title="models.Device"><tt class="xref py py-class docutils literal"><span class="pre">models.Device</span></tt></a> defines the minimal public 
+interface that any Device class should implement, in order 
+to allow other entities to use it.</p>
+<p>It should <strong>not</strong> be directly instantiated.</p>
+<p>Any Device plugin should derive from it. To see what the actual
+implementation of a Device looks like, you may for instance refer
+to the class <a class="reference internal" href="../plugins/nexa.html#plugins.nexa.NexaDevice" title="plugins.nexa.NexaDevice"><tt class="xref py py-class docutils literal"><span class="pre">plugins.nexa.NexaDevice</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="models.DeviceModel">
+<em class="property">class </em><tt class="descclassname">models.</tt><tt class="descname">DeviceModel</tt><big>(</big><em>kernel</em><big>)</big><a class="headerlink" href="#models.DeviceModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generic_models.html#generic_models.IDableObject" title="generic_models.IDableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.IDableObject</span></tt></a></p>
+<p>The DeviceModel class is particularly important in Majordom: it is the way we chose to show the user what devices he was able to add to his home automation system. Moreover, the device models are highly important in the process of adding the device to the system: it is the device models that are called when you want to add a device to Majordom. To sum up, they offer the necessary abstraction layer to the user so that he can know what devices he can add to his system and how to do it.</p>
+<p>In particular, the <tt class="xref py py-attr docutils literal"><span class="pre">adding_type</span></tt> specifies if the corresponding device must be synced or if will be automatically detected by the system. It is hughly important when it comes to the adding device wizard of the graphical user interface.</p>
+<p>The class <a class="reference internal" href="#models.DeviceModel" title="models.DeviceModel"><tt class="xref py py-class docutils literal"><span class="pre">models.DeviceModel</span></tt></a> defines the minimal public 
+interface that any device model class should implement, in order 
+to allow other entities to use it.</p>
+<p>It should <strong>not</strong> be directly instantiated.</p>
+<p>Any other device model should derive from it. To see what the actual
+implementation of a device model looks like, you may for instance refer
+to the class <tt class="xref py py-class docutils literal"><span class="pre">plugins.nexa.NexaDeviceModel</span></tt>.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="models.Action">
+<em class="property">class </em><tt class="descclassname">models.</tt><tt class="descname">Action</tt><big>(</big><em>key</em>, <em>primary</em>, <em>callback</em>, <em>arguments</em>, <em>settings</em>, <em>device=None</em>, <em>block=None</em><big>)</big><a class="headerlink" href="#models.Action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="scenario.html#scenario.Block" title="scenario.Block"><tt class="xref py py-class docutils literal"><span class="pre">scenario.Block</span></tt></a></p>
+<p>Class used to wrap an action made available by a device.</p>
+<dl class="method">
+<dt id="models.Action.execute">
+<tt class="descname">execute</tt><big>(</big><em>arguments</em><big>)</big><a class="headerlink" href="#models.Action.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute the action with the given arguments.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.Action.process">
+<tt class="descname">process</tt><big>(</big><em>changed_input</em><big>)</big><a class="headerlink" href="#models.Action.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Part of the Block facet of an Action: it is the method called when one of the inputs
+of the Action (considered as a Block) changes.</p>
+<p>If the inputs of the action block are relevant, then the action is executed, using the values of the corresponding input nodes as parameters for the execution.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.Information">
+<em class="property">class </em><tt class="descclassname">models.</tt><tt class="descname">Information</tt><big>(</big><em>key</em>, <em>primary</em>, <em>value_type</em>, <em>settings</em>, <em>device=None</em>, <em>block=None</em><big>)</big><a class="headerlink" href="#models.Information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="scenario.html#scenario.Block" title="scenario.Block"><tt class="xref py py-class docutils literal"><span class="pre">scenario.Block</span></tt></a></p>
+<p>Class used to wrap an information made available by a device.</p>
+<dl class="method">
+<dt id="models.Information.update">
+<tt class="descname">update</tt><big>(</big><em>new_value</em><big>)</big><a class="headerlink" href="#models.Information.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the Information with a new value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.Information.check_value">
+<tt class="descname">check_value</tt><big>(</big><em>new_value</em><big>)</big><a class="headerlink" href="#models.Information.check_value" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(Internal)</em> Checks if the new value given to update is ok.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.Information.get_value">
+<tt class="descname">get_value</tt><big>(</big><big>)</big><a class="headerlink" href="#models.Information.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the last value of the information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.Information.get_values">
+<tt class="descname">get_values</tt><big>(</big><big>)</big><a class="headerlink" href="#models.Information.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the values of the information between the <em>start_time</em> and the <em>ed_time</em> parameters.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.BlockModel">
+<em class="property">class </em><tt class="descclassname">models.</tt><tt class="descname">BlockModel</tt><big>(</big><em>yeah_id</em>, <em>name</em>, <em>description</em>, <em>block_class</em><big>)</big><a class="headerlink" href="#models.BlockModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="generic_models.html#generic_models.IDableObject" title="generic_models.IDableObject"><tt class="xref py py-class docutils literal"><span class="pre">generic_models.IDableObject</span></tt></a></p>
+<p>Similarly to the DeviceModel, the BlockModel is used to show the users the available blocks that he can use is his scenarios. Once again, they represent an abstraction layer between the real block and the user.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">models</span></tt></a><ul>
+<li><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="generic_models.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">generic_models</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scenario.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">scenario</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/models.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scenario.html" title="scenario"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="generic_models.html" title="generic_models"
+             >previous</a> |</li>
+        <li><a href="../index.html">Majordom 0.0.9 documentation</a> &raquo;</li>
+          <li><a href="../api_reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Victor Creste, Raphaël Gautier and Valérian Justine.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
